@@ -1,0 +1,94 @@
+# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# compiled output
+dist
+tmp
+out-tsc
+*.tsbuildinfo
+.expo
+.expo-shared
+.next
+.turbo
+.svelte-kit
+.nuxt
+.output
+.vercel
+
+# dependencies
+node_modules
+.venv/
+.pythonlibs/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+data/checkpoints.sqlite*
+reports/approved/*.md
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
+
+# Replit
+.cache/
+.local/
+
+# Private runtime data and local-only agent/validation material.
+# Ignore rules do not remove files already tracked in Git history.
+.agents/
+attached_assets/
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.db
+*.db-*
+*.sqlite*
+*.log
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+*service-account*.json
+/data/checkpoints/
+/data/memory/
+/data/private/
+/data/backups/
+/backups/
+/dumps/
+/.mem0/
+/generated-artifacts/
+/screenshots/
+/test-results/
+/playwright-report/
+/reports/approved/*
+!/reports/approved/.gitkeep

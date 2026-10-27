@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "SprintPulse AI"
+description = "Python Streamlit sprint intelligence application with deterministic analysis, LangGraph orchestration, and human-approved weekly reports."
+version = "1.0.0"
+id = "artifacts/sprintpulse-ai"
+router = "path"
+
+[[services]]
+name = "web"
+paths = ["/"]
+localPort = 20155
+
+[services.env]
+PORT = "20155"
+BASE_PATH = "/"
+
+[services.development]
+run = "cd ../.. && uv run --frozen --no-sync streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false"
+
+[services.production.build]
+args = ["uv", "sync", "--frozen", "--no-dev", "--extra", "semantic-memory"]
+
+[services.production.run]
+args = ["bash", "-lc", "uv run --frozen --no-sync streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false"]
+
+[services.production.run.env]
+PORT = "20155"
+
+[services.production.health.startup]
+path = "/_stcore/health"

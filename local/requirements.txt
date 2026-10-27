@@ -1,0 +1,8 @@
+streamlit
+pandas
+python-dotenv
+langgraph
+langchain-openai
+langgraph-checkpoint-sqlite
+pytest
+# Optional semantic memory: install local/semantic-memory-requirements.txt separately.
