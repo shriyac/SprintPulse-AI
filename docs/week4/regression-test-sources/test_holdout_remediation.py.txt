@@ -1,0 +1,163 @@
+"""Post-holdout regressions, not a new unseen dataset or changed evaluation labels."""
+from copy import deepcopy
+from pathlib import Path
+
+import pytest
+
+from agents import graph
+from agents.answer_rendering import render_answer
+from tools.sprint_data import load_sprint_data
+
+
+@pytest.fixture
+def snapshots():
+    return load_sprint_data(Path(__file__).parents[1] / "data")
+
+
+@pytest.fixture
+def facts(snapshots):
+    return graph._facts_for_route("compare", "Sprint 26", snapshots)
+
+
+def test_unfinished_is_not_the_overdue_subset(facts):
+    facts["sprint"]["overdue_count"] = 3
+    answer = render_answer("metrics", facts, "How many tickets are not done?")
+    assert "Unfinished tickets (total minus completed): 8" in answer
+    assert "3 open tickets are overdue" in answer
+    assert "16 of 24 tickets complete (66.7%)" in answer
+
+
+@pytest.mark.parametrize(("total", "done", "expected"), [
+    (0, 0, "0"), (24, 24, "0"), (24, 0, "24"),
+    (None, 16, "unavailable"), (24, None, "unavailable"),
+    (24, 25, "unavailable"), (24, -1, "unavailable"),
+    (True, False, "unavailable"), ("24", 16, "unavailable"),
+])
+def test_unfinished_boundary_counts(facts, total, done, expected):
+    facts["sprint"].update(total_tickets=total, done_count=done)
+    answer = render_answer("metrics", facts, "Show unfinished tickets")
+    assert f"Unfinished tickets (total minus completed): {expected}." in answer
+
+
+def test_points_remaining_does_not_request_unfinished_ticket_count(facts):
+    answer = render_answer("metrics", facts, "How many story points remain?")
+    assert "24 remaining" in answer
+    assert "Unfinished tickets" not in answer
+
+
+def test_earliest_selected_has_no_predecessor(snapshots):
+    facts = graph._facts_for_route("compare", "Sprint 24", snapshots)
+    answer = render_answer("compare", facts, "Use selected Sprint 24: compare with the previous available sprint.")
+    assert "comparison cannot be completed" in answer
+    assert "snapshot is unavailable" in answer
+    assert "Sprint 24 snapshot is unavailable" not in answer
+    assert "the requested predecessor snapshot is unavailable" in answer
+    assert "10 of 24 tickets complete (41.7%)" in answer
+    assert "Sprint 25" not in answer and "Sprint 26" not in answer
+
+
+@pytest.mark.parametrize("question", [
+    "Compare Sprint 26 with Sprint 23.",
+    "Compare with the previous sprint.",
+    "Compare with the prior iteration.",
+])
+def test_missing_requested_snapshot_or_numbered_predecessor(facts, question):
+    facts["historical_comparison"] = [facts["historical_comparison"][-1]]
+    answer = render_answer("compare", facts, question)
+    assert "comparison cannot be completed" in answer
+    assert "16 of 24 tickets complete (66.7%)" in answer
+    assert "Completed-ticket change" not in answer
+
+
+def test_existing_predecessor_and_general_history_still_available(facts):
+    relative = render_answer("compare", facts, "Compare completion with the previous available sprint")
+    assert "comparison cannot be completed" not in relative
+    assert "Sprint 25 to Sprint 26" in relative
+    facts["sprint"]["sprint_name"] = "Sprint 24"
+    general = render_answer("compare", facts, "Show all completion history")
+    assert "Sprint 25" in general and "Sprint 26" in general
+    assert "comparison cannot be completed" not in general
+
+
+def test_previous_available_can_skip_a_missing_numbered_snapshot(facts):
+    facts["historical_comparison"].pop(1)
+    answer = render_answer("compare", facts, "Compare with the previous available sprint")
+    assert "comparison cannot be completed" not in answer
+    assert "Sprint 24 to Sprint 26" in answer
+
+
+def test_empty_history_cannot_fabricate_predecessor(facts):
+    facts["historical_comparison"] = []
+    answer = render_answer("compare", facts, "Compare with the earlier sprint")
+    assert "comparison cannot be completed" in answer
+
+
+def renamed_facts(snapshots):
+    for frame in snapshots.values():
+        frame["ticket_id"] = frame.ticket_id.str.replace("SP-", "TEST-", regex=False)
+    return graph._facts_for_route("risk", "Sprint 26", snapshots)
+
+
+@pytest.mark.parametrize("ticket", ["TEST-122", "test-122", "(TEST-122)", "`TEST-122`"])
+def test_renamed_ticket_exact_scope(snapshots, ticket):
+    facts = renamed_facts(snapshots)
+    before = deepcopy(facts)
+    answer = render_answer("risk", facts, f"For {ticket} only, give observed blocked duration and reference sprint.")
+    assert "TEST-122" in answer and "32 days" in answer and "observed in Sprint 26" in answer
+    assert "TEST-118" not in answer and "TEST-124" not in answer
+    assert "High · Open blockers" not in answer
+    assert facts == before
+
+
+@pytest.mark.parametrize("ticket", [
+    "TEST-12", "TEST-1220", "XTEST-122", "TEST-122-extra", "TEST-122_foo",
+    "SP-122", "TEST-999",
+])
+def test_unknown_and_partial_ids_fail_closed(snapshots, ticket):
+    answer = render_answer("risk", renamed_facts(snapshots), f"Blocker duration for {ticket} only")
+    assert "not found in the selected sprint data" in answer
+    assert "32 days" not in answer and "37 days" not in answer
+
+
+def test_multiple_exact_ids_and_mixed_unknown_do_not_expand(snapshots):
+    facts = renamed_facts(snapshots)
+    answer = render_answer("risk", facts, "Blocker duration for TEST-122 and TEST-124")
+    assert "TEST-122" in answer and "TEST-124" in answer and "TEST-118" not in answer
+    unknown = render_answer("risk", facts, "Blocker duration for TEST-122 and TEST-999")
+    assert "not found" in unknown and "32 days" not in unknown
+
+
+def test_current_registry_includes_done_ids_but_not_historical_only(snapshots):
+    facts = renamed_facts(snapshots)
+    registry = snapshots["Sprint 26"]["ticket_id"].astype(str)
+    answer = render_answer("risk", facts, "Blocker duration for TEST-101 only", current_ticket_ids=registry)
+    assert "not found" not in answer
+    assert "current status is unavailable" in answer
+    facts["blocker_durations"].append({
+        "ticket_id": "OLD-999", "duration_days": 100, "summary": "Historical only",
+        "observed_in": "Sprint 23", "blocker_reason": "Test",
+    })
+    assert "not found" in render_answer("risk", facts, "Blocker duration for OLD-999 only", current_ticket_ids=registry)
+
+
+def test_missing_current_evidence_fails_closed(facts):
+    facts["overdue_tasks"] = []
+    answer = render_answer("risk", facts, "Blocker duration for SP-122 only")
+    assert "not found" in answer and "SP-118" not in answer
+
+
+def test_graph_supplies_ids_without_altering_checkpoint_evidence(snapshots, tmp_path, monkeypatch):
+    from agents.semantic_memory import DisabledMemory
+    from agents.memory import new_conversation_key
+
+    for frame in snapshots.values():
+        frame["ticket_id"] = frame.ticket_id.str.replace("SP-", "TEST-", regex=False)
+    monkeypatch.setattr(graph, "CHECKPOINT_PATH", tmp_path / "isolated.sqlite")
+    monkeypatch.setattr(graph, "configured_semantic_memory", DisabledMemory)
+    monkeypatch.setattr(graph, "generate_grounded_text", lambda *args: (None, "offline"))
+    result = graph.invoke_sprint_graph(
+        "Blocker duration for TEST-101 only", "Sprint 26", snapshots, new_conversation_key(),
+    )
+    assert "not found" not in result["response"]
+    assert "TEST-118" not in result["response"]
+    assert "current_ticket_ids" not in result["tool_outputs"]["sprint"]

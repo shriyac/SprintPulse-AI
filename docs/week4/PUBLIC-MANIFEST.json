@@ -1,0 +1,980 @@
+{
+  "public_copied_files": [
+    {
+      "path": "docs/week4/01-submission/SprintPulse-AI-Week4.html",
+      "sha256": "6ded50506896733fe0a63d2ed0e8059f87e50445ae4a79e2d63b9dc407bf5d35",
+      "original_sha256": "6ded50506896733fe0a63d2ed0e8059f87e50445ae4a79e2d63b9dc407bf5d35",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/01-submission/SprintPulse-AI-Week4.pdf",
+      "sha256": "3ac9febc5045b986c6536f452564e085d656c5b4ab1aed2fc9a78ebe3132fb18",
+      "original_sha256": "3ac9febc5045b986c6536f452564e085d656c5b4ab1aed2fc9a78ebe3132fb18",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/HOLDOUT_REPORT-v1.md",
+      "sha256": "dbbf4466aac74bf3913888377648fe72815bfd0c0d044783f29b21ee5db87df8",
+      "original_sha256": "dbbf4466aac74bf3913888377648fe72815bfd0c0d044783f29b21ee5db87df8",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/IMPROVEMENT_REPORT-v1.md",
+      "sha256": "41ebd91cdab118b8830c799e844234f1549c1bd9488111edd02d3eba94305110",
+      "original_sha256": "41ebd91cdab118b8830c799e844234f1549c1bd9488111edd02d3eba94305110",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/POST_HOLDOUT_REMEDIATION-v1.md",
+      "sha256": "d7ce5e96d0ea51b0ef786859cf55e9ee4566c46ae8cb65f7f927928139039a05",
+      "original_sha256": "d7ce5e96d0ea51b0ef786859cf55e9ee4566c46ae8cb65f7f927928139039a05",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/chronological-comparison.md",
+      "sha256": "5c325242124b77725785e1ae63c92e2cdaec794db5d01c1e80fbaa9f748de484",
+      "original_sha256": "5c325242124b77725785e1ae63c92e2cdaec794db5d01c1e80fbaa9f748de484",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/frozen/golden/v1.json",
+      "sha256": "c35be99dbf15d2b9fff4e4aa479c6de5c03ddccfc9fff80a5ab2b38d548cf199",
+      "original_sha256": "c35be99dbf15d2b9fff4e4aa479c6de5c03ddccfc9fff80a5ab2b38d548cf199",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/frozen/golden/v1.sha256",
+      "sha256": "a0575e7b7ca9093fda2b113af5cf2cf369800ac8fdb0aad97693fcad71ad816b",
+      "original_sha256": "a0575e7b7ca9093fda2b113af5cf2cf369800ac8fdb0aad97693fcad71ad816b",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/frozen/holdout/v1.json",
+      "sha256": "1965d096ebcf40d9c41a95ea519ec6f231456100a5b72f972149c92e3395ceee",
+      "original_sha256": "1965d096ebcf40d9c41a95ea519ec6f231456100a5b72f972149c92e3395ceee",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/frozen/holdout/v1.sha256",
+      "sha256": "8176b9e29cddf5539938654e7bcd343e5e87c5706a164d1be5a3c9108af5a4a4",
+      "original_sha256": "8176b9e29cddf5539938654e7bcd343e5e87c5706a164d1be5a3c9108af5a4a4",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/golden-initial-improved/agent-assisted-review.json",
+      "sha256": "218c3e94fa0708874e9b1a5b373050b35a85a8cb772afabea6c7b39eafe97602",
+      "original_sha256": "218c3e94fa0708874e9b1a5b373050b35a85a8cb772afabea6c7b39eafe97602",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/golden-initial-improved/metadata.json",
+      "sha256": "dff9fe4da8ad18c3d74e56c49596070b0b36b2fbe140b8877a9ba12d620f846f",
+      "original_sha256": "dff9fe4da8ad18c3d74e56c49596070b0b36b2fbe140b8877a9ba12d620f846f",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/golden-initial-improved/records.jsonl",
+      "sha256": "771db68ed1e52bb09f61b12b9e9fa21059ca9308843d9dc64e99cf39d17fec67",
+      "original_sha256": "771db68ed1e52bb09f61b12b9e9fa21059ca9308843d9dc64e99cf39d17fec67",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/golden-initial-improved/reviewed-records.jsonl",
+      "sha256": "096deb54f8b61a0fd0e75e3b17cb54e3404f420fd5351bb8c914f03c5452e0e8",
+      "original_sha256": "096deb54f8b61a0fd0e75e3b17cb54e3404f420fd5351bb8c914f03c5452e0e8",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/golden-initial-improved/reviewed-summary.json",
+      "sha256": "c98097b9e1dcc2500273fa46719ac4d239858168a8a2e7dbacada4bd799cb067",
+      "original_sha256": "c98097b9e1dcc2500273fa46719ac4d239858168a8a2e7dbacada4bd799cb067",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/golden-original-baseline/metadata.json",
+      "sha256": "4e0bc0504935cf4dd4b88a6f045121f99b0913a36a8aa9843b1b78595b537593",
+      "original_sha256": "4e0bc0504935cf4dd4b88a6f045121f99b0913a36a8aa9843b1b78595b537593",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/golden-original-baseline/records.jsonl",
+      "sha256": "1a271d17c4d73f7995682252b3b9d158ca97728b01a748d03b4c2ef7d3960d64",
+      "original_sha256": "1a271d17c4d73f7995682252b3b9d158ca97728b01a748d03b4c2ef7d3960d64",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/golden-original-baseline/reviewed-records.jsonl",
+      "sha256": "71cd4d51532ad35a23a7416954b555ed6f1cf384f2e8795963959a256f4c2874",
+      "original_sha256": "71cd4d51532ad35a23a7416954b555ed6f1cf384f2e8795963959a256f4c2874",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/golden-original-baseline/reviewed-summary.json",
+      "sha256": "1822af861ff9be69282431535e419d9db5451aa76308e666a98a295bd8ee1121",
+      "original_sha256": "1822af861ff9be69282431535e419d9db5451aa76308e666a98a295bd8ee1121",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/original-paired-holdout/agent-assisted-review.json",
+      "sha256": "ee393600bb0a82a017a9ec7684fae87f0424a79cfa28e317323fe7c1ac7a6e1b",
+      "original_sha256": "ee393600bb0a82a017a9ec7684fae87f0424a79cfa28e317323fe7c1ac7a6e1b",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/original-paired-holdout/assisted-summary.json",
+      "sha256": "476de779f4f93d4c66fcdcdba7a49c9c682f9b06622264176f8333ae625a9cc3",
+      "original_sha256": "476de779f4f93d4c66fcdcdba7a49c9c682f9b06622264176f8333ae625a9cc3",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/original-paired-holdout/metadata.json",
+      "sha256": "98332d828f6be30d4fa049713d987627536f49b37f822d9fd8aaf0763801a353",
+      "original_sha256": "98332d828f6be30d4fa049713d987627536f49b37f822d9fd8aaf0763801a353",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/original-paired-holdout/records.jsonl",
+      "sha256": "eea90e52cdd6bc4014332f2364337ebf88e2a2cbd6f840e7ac01642047b3a68c",
+      "original_sha256": "eea90e52cdd6bc4014332f2364337ebf88e2a2cbd6f840e7ac01642047b3a68c",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/original-paired-holdout/reviewed-records.jsonl",
+      "sha256": "907a8a4a559e0d9339e723ae558dd0f94e0d1930f48f348bab36399df8875d52",
+      "original_sha256": "907a8a4a559e0d9339e723ae558dd0f94e0d1930f48f348bab36399df8875d52",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/remediation-golden/agent-assisted-review.json",
+      "sha256": "647c76f5049cdc5ac40359d6b0e878863cce6941a635bf7fc6384e3edad6e0dd",
+      "original_sha256": "647c76f5049cdc5ac40359d6b0e878863cce6941a635bf7fc6384e3edad6e0dd",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/remediation-golden/assisted-summary.json",
+      "sha256": "879ca1ec68967d443c1f89ce598fe93dc614820443a8331e097fa7cc9235746a",
+      "original_sha256": "879ca1ec68967d443c1f89ce598fe93dc614820443a8331e097fa7cc9235746a",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/remediation-golden/records.jsonl",
+      "sha256": "1d305c1d8212886def1801fd2794d70a8a3bebb4d0762c9ba91c5e4e7502d678",
+      "original_sha256": "1d305c1d8212886def1801fd2794d70a8a3bebb4d0762c9ba91c5e4e7502d678",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/remediation-golden/reviewed-records.jsonl",
+      "sha256": "218c33f3fddfbceb5ef257768fcd524f9cbf8641d8c3c9c0e0ae1b033e1bd68b",
+      "original_sha256": "218c33f3fddfbceb5ef257768fcd524f9cbf8641d8c3c9c0e0ae1b033e1bd68b",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/remediation-holdout/agent-assisted-review.json",
+      "sha256": "240851366deb10a756786c93d29bd42a4388fb01b176e81d490d261fc642188e",
+      "original_sha256": "240851366deb10a756786c93d29bd42a4388fb01b176e81d490d261fc642188e",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/remediation-holdout/assisted-summary.json",
+      "sha256": "20ca49036dbf3e5a199ec29f29f0ec283bdb85b56ccb4eae7b85cf7876a54602",
+      "original_sha256": "20ca49036dbf3e5a199ec29f29f0ec283bdb85b56ccb4eae7b85cf7876a54602",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/remediation-holdout/records.jsonl",
+      "sha256": "da5f821771daa9652c94da26da0543bf1ff23ba252df85ddc822738be4f0132f",
+      "original_sha256": "da5f821771daa9652c94da26da0543bf1ff23ba252df85ddc822738be4f0132f",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/remediation-holdout/reviewed-records.jsonl",
+      "sha256": "b1344cdabf23b98901e4df39f165975b96edea53b85b88725be698c327867d46",
+      "original_sha256": "b1344cdabf23b98901e4df39f165975b96edea53b85b88725be698c327867d46",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/remediation-metadata.json",
+      "sha256": "8db0e81737358c22470a2b6ed59cf8f5555aceb169f369c2cd98b8909f27a503",
+      "original_sha256": "8db0e81737358c22470a2b6ed59cf8f5555aceb169f369c2cd98b8909f27a503",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/remediation-remediation-verified-pytest.txt",
+      "sha256": "e51bfae3431ea487c160e8d31cc6b6c4c3d40bf0a83d94379d870d8e8b4b4a0d",
+      "original_sha256": "e51bfae3431ea487c160e8d31cc6b6c4c3d40bf0a83d94379d870d8e8b4b4a0d",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/remediation-remediation-verified-pytest.xml",
+      "sha256": "5c9957813a55af8ddea9aed84fa198b691c21ac6e86c006a661ba140bea571c7",
+      "original_sha256": "5c9957813a55af8ddea9aed84fa198b691c21ac6e86c006a661ba140bea571c7",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/remediation-verification.json",
+      "sha256": "a882587cc39239369de8339f9fedf422d2f09071d88dab754d8235dc90dff694",
+      "original_sha256": "a882587cc39239369de8339f9fedf422d2f09071d88dab754d8235dc90dff694",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/saved-metrics.json",
+      "sha256": "19d97263fc9f6a6d9d35e8fb5cb06923ad8c1b63cea571cf6e83d8bfe642ae0e",
+      "original_sha256": "19d97263fc9f6a6d9d35e8fb5cb06923ad8c1b63cea571cf6e83d8bfe642ae0e",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/02-evaluation-evidence/source-provenance.json",
+      "sha256": "9ea91c76b29f6085f513442dd12844b83ee3abe34f2f08d3e580556f8e90e992",
+      "original_sha256": "9ea91c76b29f6085f513442dd12844b83ee3abe34f2f08d3e580556f8e90e992",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/03-author-review/FINAL-AUTHOR-REVIEW.html",
+      "sha256": "f241e7b44cc8864ac40c2a427f1bf4ed6e6f3228a315ecdb9e6df608f0e6e705",
+      "original_sha256": "f241e7b44cc8864ac40c2a427f1bf4ed6e6f3228a315ecdb9e6df608f0e6e705",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/03-author-review/FINAL-AUTHOR-REVIEW.md",
+      "sha256": "52e5db885e96779cd55a62d28ca6f0f0e5a48e1fbd2e7a5bc7659182a06ed563",
+      "original_sha256": "52e5db885e96779cd55a62d28ca6f0f0e5a48e1fbd2e7a5bc7659182a06ed563",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/03-author-review/WEEK4-SUBMISSION-SUMMARY-author-reviewed.md",
+      "sha256": "0223224ce8003d7bfee434356055923e718b53ca8e4f715764e179d271e6c8de",
+      "original_sha256": "0223224ce8003d7bfee434356055923e718b53ca8e4f715764e179d271e6c8de",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/03-author-review/automation/automated-predictions.json",
+      "sha256": "f236de396e2ff23bba6053c4ea9788cbc8817afcf16224746ba116a1295f8ba2",
+      "original_sha256": "f236de396e2ff23bba6053c4ea9788cbc8817afcf16224746ba116a1295f8ba2",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/03-author-review/automation/automated-summary.json",
+      "sha256": "54c91c1840b9d958c36a4350bf5d27ca7ce0a268eda7dadadc82ad0d514fbe58",
+      "original_sha256": "54c91c1840b9d958c36a4350bf5d27ca7ce0a268eda7dadadc82ad0d514fbe58",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/03-author-review/automation/deterministic-recheck.json",
+      "sha256": "5907a058c91b13faf7eea30e05f46b3c31a1fb039af397985c79f0206c1c09fd",
+      "original_sha256": "5907a058c91b13faf7eea30e05f46b3c31a1fb039af397985c79f0206c1c09fd",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/03-author-review/automation/import_spotcheck.py",
+      "sha256": "9e3dd32b4869605a57a3105dd7e81bca6b6e32ed3da6f363397b94989fee9909",
+      "original_sha256": "9e3dd32b4869605a57a3105dd7e81bca6b6e32ed3da6f363397b94989fee9909",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/03-author-review/automation/sample-manifest.json",
+      "sha256": "b97941b0cf64d06cd7048ed711a39ad68afa42b62a98aae671b13775ec559caf",
+      "original_sha256": "b97941b0cf64d06cd7048ed711a39ad68afa42b62a98aae671b13775ec559caf",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/03-author-review/automation/test_import_spotcheck.py",
+      "sha256": "e532851212dc6129ee492910b373bce2420e1537ba0a606da9caf4f6b79f07fb",
+      "original_sha256": "e532851212dc6129ee492910b373bce2420e1537ba0a606da9caf4f6b79f07fb",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/03-author-review/completed-review.csv",
+      "sha256": "4141b83b737dd107ae110294c5956ccab4e0adae63c46928649d6f4ba3600896",
+      "original_sha256": "5dfe106a04559eae6e2964be5d8268c73c4fe6ee18fe5103add8b6f1cd632a79",
+      "redacted": true
+    },
+    {
+      "path": "docs/week4/03-author-review/sample-agreement.json",
+      "sha256": "26986143695f0b9e4f64f07c3167cdd25e274137559e7bc03a8122785a35cb20",
+      "original_sha256": "98c77edb06d1363cad3453cdbbb657ab1ab1bf6c5b4c02dfdee67dc4db7d54e0",
+      "redacted": true
+    },
+    {
+      "path": "docs/week4/03-author-review/sample-agreement.md",
+      "sha256": "122fb5db9c2335143b4f5adb891c3eccc824ed84a5b2200d216b1f6d7e9e7e09",
+      "original_sha256": "122fb5db9c2335143b4f5adb891c3eccc824ed84a5b2200d216b1f6d7e9e7e09",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/EVALUATOR-AND-PROMPTS.md",
+      "sha256": "26ea3e2753988cff3c7e2b67c42c284314d64ab1930454f42af9d919a11c69e7",
+      "original_sha256": "26ea3e2753988cff3c7e2b67c42c284314d64ab1930454f42af9d919a11c69e7",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/FINAL_VALIDATION-v1.md",
+      "sha256": "78d15542e6796701a2219b955ad95c5ff7613c7e6e32267addf9666eb0989594",
+      "original_sha256": "78d15542e6796701a2219b955ad95c5ff7613c7e6e32267addf9666eb0989594",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/HOLDOUT_REPORT-v1.md",
+      "sha256": "dbbf4466aac74bf3913888377648fe72815bfd0c0d044783f29b21ee5db87df8",
+      "original_sha256": "dbbf4466aac74bf3913888377648fe72815bfd0c0d044783f29b21ee5db87df8",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/IMPROVEMENT_REPORT-v1.md",
+      "sha256": "41ebd91cdab118b8830c799e844234f1549c1bd9488111edd02d3eba94305110",
+      "original_sha256": "41ebd91cdab118b8830c799e844234f1549c1bd9488111edd02d3eba94305110",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/POST_HOLDOUT_REMEDIATION-v1.md",
+      "sha256": "d7ce5e96d0ea51b0ef786859cf55e9ee4566c46ae8cb65f7f927928139039a05",
+      "original_sha256": "d7ce5e96d0ea51b0ef786859cf55e9ee4566c46ae8cb65f7f927928139039a05",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/README.md",
+      "sha256": "05cccdab13b86bd693d8fc4027d579d8149cb124fdb4d50c98607139a3becfdf",
+      "original_sha256": "05cccdab13b86bd693d8fc4027d579d8149cb124fdb4d50c98607139a3becfdf",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/RUBRIC.md",
+      "sha256": "f60d75bbc6aa6329cd0000b32f13de4938c3ba9e7e96d5718075d43eff83fea8",
+      "original_sha256": "f60d75bbc6aa6329cd0000b32f13de4938c3ba9e7e96d5718075d43eff83fea8",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/__init__.py",
+      "sha256": "873aa54846ae3d5146733dfde0fc87266a9dbda8167f79ff1b7d3c491805547e",
+      "original_sha256": "873aa54846ae3d5146733dfde0fc87266a9dbda8167f79ff1b7d3c491805547e",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/approval.example.json",
+      "sha256": "e723a44d986e2e58c5187cf47231e50d49744cbddbe263f9f10fa58c4a6fd653",
+      "original_sha256": "e723a44d986e2e58c5187cf47231e50d49744cbddbe263f9f10fa58c4a6fd653",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/golden/REVIEW-v1.md",
+      "sha256": "2308a31a538d30da71b1e40991f03b03832d247732da4e17db44f58bc0ef04d3",
+      "original_sha256": "2308a31a538d30da71b1e40991f03b03832d247732da4e17db44f58bc0ef04d3",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/holdout.py",
+      "sha256": "07bcc846879b0ece2dedd5e6b2798b620d08b73af499c29ec432799fd3694813",
+      "original_sha256": "07bcc846879b0ece2dedd5e6b2798b620d08b73af499c29ec432799fd3694813",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/holdout_worker.py",
+      "sha256": "544fa97903d98e0c1e82fa8a23dcda02962caf066b01e1c08066bf36830dc1d0",
+      "original_sha256": "544fa97903d98e0c1e82fa8a23dcda02962caf066b01e1c08066bf36830dc1d0",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/instrumentation.py",
+      "sha256": "43e7bdabada5640b85798994eaa2ce46fab200174fdded7752c32d6839391cee",
+      "original_sha256": "43e7bdabada5640b85798994eaa2ce46fab200174fdded7752c32d6839391cee",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/remediation.py",
+      "sha256": "0d1e9436128a539dc0418dd3ac09e0bf79f6ffb53255bb9a6e1f7b0ac7832628",
+      "original_sha256": "0d1e9436128a539dc0418dd3ac09e0bf79f6ffb53255bb9a6e1f7b0ac7832628",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/remediation_worker.py",
+      "sha256": "dc8d80234643c0e9aac5cf51f18167baf3e4645047b80a7136e9a16928eb87fb",
+      "original_sha256": "dc8d80234643c0e9aac5cf51f18167baf3e4645047b80a7136e9a16928eb87fb",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/runner.py",
+      "sha256": "6b698e47ea26e0d4a5c451164e0c3abab081175208556c0cb612b9f03486e454",
+      "original_sha256": "6b698e47ea26e0d4a5c451164e0c3abab081175208556c0cb612b9f03486e454",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/scoring.py",
+      "sha256": "e110070908d9c69ea82652191e2084fe3657a9278009c1635e6b4bce50af35c9",
+      "original_sha256": "e110070908d9c69ea82652191e2084fe3657a9278009c1635e6b4bce50af35c9",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/04-methods/evaluation/verify.py",
+      "sha256": "a8b659275bde0c8c24e03dbf52a4e60a2927c894584749ba0a5fc4fba9f9e1fe",
+      "original_sha256": "a8b659275bde0c8c24e03dbf52a4e60a2927c894584749ba0a5fc4fba9f9e1fe",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/LOOM-NOTE.txt",
+      "sha256": "969ad6bd2f4670b929665493ea1926b2ef0b1658550a2d336ed5e9fa3a4a81d5",
+      "original_sha256": "969ad6bd2f4670b929665493ea1926b2ef0b1658550a2d336ed5e9fa3a4a81d5",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/REPRODUCE.md",
+      "sha256": "cf2cc8210e89230c4a2b03e8eb1fad5557bb54cd0ceeb0127b82bb41e26d3833",
+      "original_sha256": "cf2cc8210e89230c4a2b03e8eb1fad5557bb54cd0ceeb0127b82bb41e26d3833",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/archived-loom-outline.md",
+      "sha256": "c417d3e3a1a810240b0c33879cd2d481593d5ce4cb65ee3a6453c3c5cf04b853",
+      "original_sha256": "c417d3e3a1a810240b0c33879cd2d481593d5ce4cb65ee3a6453c3c5cf04b853",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/environment/pyproject.toml",
+      "sha256": "80bc36a24e700570ec9e9dc4a63f0f1ee3f394a9dda6fee9efb440b4742a0fd6",
+      "original_sha256": "80bc36a24e700570ec9e9dc4a63f0f1ee3f394a9dda6fee9efb440b4742a0fd6",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/environment/uv.lock",
+      "sha256": "c468824e6c5eb747d232bde86e4f23700dcae1410333d6384bdb6cb08e61894f",
+      "original_sha256": "c468824e6c5eb747d232bde86e4f23700dcae1410333d6384bdb6cb08e61894f",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/agents/__init__.py",
+      "sha256": "1cc25a4fda1524d68b63420989609e8189aecd3ca3a9d75b49271c308d6bf1bc",
+      "original_sha256": "1cc25a4fda1524d68b63420989609e8189aecd3ca3a9d75b49271c308d6bf1bc",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/agents/findings.py",
+      "sha256": "1bd6df7628b24fdbf9cfa90add3f62171e71ba5791872c0797a82a21c1f7b82e",
+      "original_sha256": "1bd6df7628b24fdbf9cfa90add3f62171e71ba5791872c0797a82a21c1f7b82e",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/agents/graph.py",
+      "sha256": "9f0a86f86ef4c1414a597e5f7ad76ca9d557fc7ceac8b1a8f0f872a41905248c",
+      "original_sha256": "9f0a86f86ef4c1414a597e5f7ad76ca9d557fc7ceac8b1a8f0f872a41905248c",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/agents/llm.py",
+      "sha256": "e4e04a1415883862f055ce4d09238bf2eddb0f56f1fc7862b85a1aba0070863b",
+      "original_sha256": "e4e04a1415883862f055ce4d09238bf2eddb0f56f1fc7862b85a1aba0070863b",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/agents/memory.py",
+      "sha256": "ede677b239bfd74797e0b3b347d6c7e4ead60db56b33fa43d5695e09290c6aca",
+      "original_sha256": "ede677b239bfd74797e0b3b347d6c7e4ead60db56b33fa43d5695e09290c6aca",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/agents/semantic_ledger.py",
+      "sha256": "f7fd6ac74c363a3ad52a44321f4459246ca8da99e5c9955f81b2551e4c0012bd",
+      "original_sha256": "f7fd6ac74c363a3ad52a44321f4459246ca8da99e5c9955f81b2551e4c0012bd",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/agents/semantic_memory.py",
+      "sha256": "3904e8684c89fd9db5578950f9acb77a8f6133cfbf107b8aca751161a1b0ca57",
+      "original_sha256": "3904e8684c89fd9db5578950f9acb77a8f6133cfbf107b8aca751161a1b0ca57",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/app.py",
+      "sha256": "dacc40b55a1c70cb57be79d105ddc6d7a2e7c4cec1386cf32416923a7747328d",
+      "original_sha256": "dacc40b55a1c70cb57be79d105ddc6d7a2e7c4cec1386cf32416923a7747328d",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/data/sprint_01.csv",
+      "sha256": "c91fc765287f29cf518b6f51d6427d41f1640b96dbfa000a4f7fa5c668032f29",
+      "original_sha256": "c91fc765287f29cf518b6f51d6427d41f1640b96dbfa000a4f7fa5c668032f29",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/data/sprint_02.csv",
+      "sha256": "3be09232b72779b147286de5d134675a0929cb689661a2e019e97718362fb30a",
+      "original_sha256": "3be09232b72779b147286de5d134675a0929cb689661a2e019e97718362fb30a",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/data/sprint_03.csv",
+      "sha256": "ff1fcac5e47df39ad43158af87d220b4fe2572dfc256b9eb6bfaeec22043fe7f",
+      "original_sha256": "ff1fcac5e47df39ad43158af87d220b4fe2572dfc256b9eb6bfaeec22043fe7f",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/pyproject.toml",
+      "sha256": "80bc36a24e700570ec9e9dc4a63f0f1ee3f394a9dda6fee9efb440b4742a0fd6",
+      "original_sha256": "80bc36a24e700570ec9e9dc4a63f0f1ee3f394a9dda6fee9efb440b4742a0fd6",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/reports/__init__.py",
+      "sha256": "03acc15360fdd1946ce207eb0a3e0d749572dc325f23ef093a0f37de1db128a0",
+      "original_sha256": "03acc15360fdd1946ce207eb0a3e0d749572dc325f23ef093a0f37de1db128a0",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/reports/publisher.py",
+      "sha256": "7d017098b3b174b546839a32d120723efd861912ac7c7489ac681dda611925aa",
+      "original_sha256": "7d017098b3b174b546839a32d120723efd861912ac7c7489ac681dda611925aa",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/tools/__init__.py",
+      "sha256": "c4d983cb45aca4e9caf388781338d83c1931f7e65ceceb92ae047ba96f11afbb",
+      "original_sha256": "c4d983cb45aca4e9caf388781338d83c1931f7e65ceceb92ae047ba96f11afbb",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/tools/sprint_data.py",
+      "sha256": "c47c5b257cde092bd9a3762ae89dafa65077505dc87e4bd3782216904631a35a",
+      "original_sha256": "c47c5b257cde092bd9a3762ae89dafa65077505dc87e4bd3782216904631a35a",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/tools/sprint_metrics.py",
+      "sha256": "40bd326de78bac8c3315e49b1db416a129d00514ccaf0c5290fef4e99439e446",
+      "original_sha256": "40bd326de78bac8c3315e49b1db416a129d00514ccaf0c5290fef4e99439e446",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/baseline/uv.lock",
+      "sha256": "c468824e6c5eb747d232bde86e4f23700dcae1410333d6384bdb6cb08e61894f",
+      "original_sha256": "c468824e6c5eb747d232bde86e4f23700dcae1410333d6384bdb6cb08e61894f",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/agents/__init__.py",
+      "sha256": "1cc25a4fda1524d68b63420989609e8189aecd3ca3a9d75b49271c308d6bf1bc",
+      "original_sha256": "1cc25a4fda1524d68b63420989609e8189aecd3ca3a9d75b49271c308d6bf1bc",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/agents/answer_rendering.py",
+      "sha256": "d099e2918eb27122deb68cac1bf1005b5d95610584610d3ea7c12d98890821a8",
+      "original_sha256": "d099e2918eb27122deb68cac1bf1005b5d95610584610d3ea7c12d98890821a8",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/agents/findings.py",
+      "sha256": "1bd6df7628b24fdbf9cfa90add3f62171e71ba5791872c0797a82a21c1f7b82e",
+      "original_sha256": "1bd6df7628b24fdbf9cfa90add3f62171e71ba5791872c0797a82a21c1f7b82e",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/agents/graph.py",
+      "sha256": "6562e46275888edb2c6d8780d88ff16a2a0b40cef5e1eb6020ea1e975df1d502",
+      "original_sha256": "6562e46275888edb2c6d8780d88ff16a2a0b40cef5e1eb6020ea1e975df1d502",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/agents/llm.py",
+      "sha256": "e4e04a1415883862f055ce4d09238bf2eddb0f56f1fc7862b85a1aba0070863b",
+      "original_sha256": "e4e04a1415883862f055ce4d09238bf2eddb0f56f1fc7862b85a1aba0070863b",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/agents/memory.py",
+      "sha256": "ede677b239bfd74797e0b3b347d6c7e4ead60db56b33fa43d5695e09290c6aca",
+      "original_sha256": "ede677b239bfd74797e0b3b347d6c7e4ead60db56b33fa43d5695e09290c6aca",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/agents/semantic_ledger.py",
+      "sha256": "f7fd6ac74c363a3ad52a44321f4459246ca8da99e5c9955f81b2551e4c0012bd",
+      "original_sha256": "f7fd6ac74c363a3ad52a44321f4459246ca8da99e5c9955f81b2551e4c0012bd",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/agents/semantic_memory.py",
+      "sha256": "3904e8684c89fd9db5578950f9acb77a8f6133cfbf107b8aca751161a1b0ca57",
+      "original_sha256": "3904e8684c89fd9db5578950f9acb77a8f6133cfbf107b8aca751161a1b0ca57",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/app.py",
+      "sha256": "dacc40b55a1c70cb57be79d105ddc6d7a2e7c4cec1386cf32416923a7747328d",
+      "original_sha256": "dacc40b55a1c70cb57be79d105ddc6d7a2e7c4cec1386cf32416923a7747328d",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/data/sprint_01.csv",
+      "sha256": "c91fc765287f29cf518b6f51d6427d41f1640b96dbfa000a4f7fa5c668032f29",
+      "original_sha256": "c91fc765287f29cf518b6f51d6427d41f1640b96dbfa000a4f7fa5c668032f29",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/data/sprint_02.csv",
+      "sha256": "3be09232b72779b147286de5d134675a0929cb689661a2e019e97718362fb30a",
+      "original_sha256": "3be09232b72779b147286de5d134675a0929cb689661a2e019e97718362fb30a",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/data/sprint_03.csv",
+      "sha256": "ff1fcac5e47df39ad43158af87d220b4fe2572dfc256b9eb6bfaeec22043fe7f",
+      "original_sha256": "ff1fcac5e47df39ad43158af87d220b4fe2572dfc256b9eb6bfaeec22043fe7f",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/pyproject.toml",
+      "sha256": "80bc36a24e700570ec9e9dc4a63f0f1ee3f394a9dda6fee9efb440b4742a0fd6",
+      "original_sha256": "80bc36a24e700570ec9e9dc4a63f0f1ee3f394a9dda6fee9efb440b4742a0fd6",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/reports/__init__.py",
+      "sha256": "03acc15360fdd1946ce207eb0a3e0d749572dc325f23ef093a0f37de1db128a0",
+      "original_sha256": "03acc15360fdd1946ce207eb0a3e0d749572dc325f23ef093a0f37de1db128a0",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/reports/publisher.py",
+      "sha256": "7d017098b3b174b546839a32d120723efd861912ac7c7489ac681dda611925aa",
+      "original_sha256": "7d017098b3b174b546839a32d120723efd861912ac7c7489ac681dda611925aa",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/tools/__init__.py",
+      "sha256": "c4d983cb45aca4e9caf388781338d83c1931f7e65ceceb92ae047ba96f11afbb",
+      "original_sha256": "c4d983cb45aca4e9caf388781338d83c1931f7e65ceceb92ae047ba96f11afbb",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/tools/sprint_data.py",
+      "sha256": "c47c5b257cde092bd9a3762ae89dafa65077505dc87e4bd3782216904631a35a",
+      "original_sha256": "c47c5b257cde092bd9a3762ae89dafa65077505dc87e4bd3782216904631a35a",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/tools/sprint_metrics.py",
+      "sha256": "40bd326de78bac8c3315e49b1db416a129d00514ccaf0c5290fef4e99439e446",
+      "original_sha256": "40bd326de78bac8c3315e49b1db416a129d00514ccaf0c5290fef4e99439e446",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/initial-improved/uv.lock",
+      "sha256": "c468824e6c5eb747d232bde86e4f23700dcae1410333d6384bdb6cb08e61894f",
+      "original_sha256": "c468824e6c5eb747d232bde86e4f23700dcae1410333d6384bdb6cb08e61894f",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/agents/__init__.py",
+      "sha256": "1cc25a4fda1524d68b63420989609e8189aecd3ca3a9d75b49271c308d6bf1bc",
+      "original_sha256": "1cc25a4fda1524d68b63420989609e8189aecd3ca3a9d75b49271c308d6bf1bc",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/agents/answer_rendering.py",
+      "sha256": "05ce83f52e6ca463aaca6319601ee01faf8637cdd23372493884adc104d0666b",
+      "original_sha256": "05ce83f52e6ca463aaca6319601ee01faf8637cdd23372493884adc104d0666b",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/agents/findings.py",
+      "sha256": "1bd6df7628b24fdbf9cfa90add3f62171e71ba5791872c0797a82a21c1f7b82e",
+      "original_sha256": "1bd6df7628b24fdbf9cfa90add3f62171e71ba5791872c0797a82a21c1f7b82e",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/agents/graph.py",
+      "sha256": "7483fae482fd593a2b1c0df1049f776eeaaa8d144d8c6233d9dec968ee63b98d",
+      "original_sha256": "7483fae482fd593a2b1c0df1049f776eeaaa8d144d8c6233d9dec968ee63b98d",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/agents/llm.py",
+      "sha256": "e4e04a1415883862f055ce4d09238bf2eddb0f56f1fc7862b85a1aba0070863b",
+      "original_sha256": "e4e04a1415883862f055ce4d09238bf2eddb0f56f1fc7862b85a1aba0070863b",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/agents/memory.py",
+      "sha256": "ede677b239bfd74797e0b3b347d6c7e4ead60db56b33fa43d5695e09290c6aca",
+      "original_sha256": "ede677b239bfd74797e0b3b347d6c7e4ead60db56b33fa43d5695e09290c6aca",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/agents/semantic_ledger.py",
+      "sha256": "f7fd6ac74c363a3ad52a44321f4459246ca8da99e5c9955f81b2551e4c0012bd",
+      "original_sha256": "f7fd6ac74c363a3ad52a44321f4459246ca8da99e5c9955f81b2551e4c0012bd",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/agents/semantic_memory.py",
+      "sha256": "3904e8684c89fd9db5578950f9acb77a8f6133cfbf107b8aca751161a1b0ca57",
+      "original_sha256": "3904e8684c89fd9db5578950f9acb77a8f6133cfbf107b8aca751161a1b0ca57",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/data/sprint_01.csv",
+      "sha256": "c91fc765287f29cf518b6f51d6427d41f1640b96dbfa000a4f7fa5c668032f29",
+      "original_sha256": "c91fc765287f29cf518b6f51d6427d41f1640b96dbfa000a4f7fa5c668032f29",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/data/sprint_02.csv",
+      "sha256": "3be09232b72779b147286de5d134675a0929cb689661a2e019e97718362fb30a",
+      "original_sha256": "3be09232b72779b147286de5d134675a0929cb689661a2e019e97718362fb30a",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/data/sprint_03.csv",
+      "sha256": "ff1fcac5e47df39ad43158af87d220b4fe2572dfc256b9eb6bfaeec22043fe7f",
+      "original_sha256": "ff1fcac5e47df39ad43158af87d220b4fe2572dfc256b9eb6bfaeec22043fe7f",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/pyproject.toml",
+      "sha256": "80bc36a24e700570ec9e9dc4a63f0f1ee3f394a9dda6fee9efb440b4742a0fd6",
+      "original_sha256": "80bc36a24e700570ec9e9dc4a63f0f1ee3f394a9dda6fee9efb440b4742a0fd6",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/reports/__init__.py",
+      "sha256": "03acc15360fdd1946ce207eb0a3e0d749572dc325f23ef093a0f37de1db128a0",
+      "original_sha256": "03acc15360fdd1946ce207eb0a3e0d749572dc325f23ef093a0f37de1db128a0",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/reports/publisher.py",
+      "sha256": "7d017098b3b174b546839a32d120723efd861912ac7c7489ac681dda611925aa",
+      "original_sha256": "7d017098b3b174b546839a32d120723efd861912ac7c7489ac681dda611925aa",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/tools/__init__.py",
+      "sha256": "c4d983cb45aca4e9caf388781338d83c1931f7e65ceceb92ae047ba96f11afbb",
+      "original_sha256": "c4d983cb45aca4e9caf388781338d83c1931f7e65ceceb92ae047ba96f11afbb",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/tools/sprint_data.py",
+      "sha256": "c47c5b257cde092bd9a3762ae89dafa65077505dc87e4bd3782216904631a35a",
+      "original_sha256": "c47c5b257cde092bd9a3762ae89dafa65077505dc87e4bd3782216904631a35a",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/tools/sprint_metrics.py",
+      "sha256": "40bd326de78bac8c3315e49b1db416a129d00514ccaf0c5290fef4e99439e446",
+      "original_sha256": "40bd326de78bac8c3315e49b1db416a129d00514ccaf0c5290fef4e99439e446",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/05-reproducibility/source-versions/post-holdout-remediation/uv.lock",
+      "sha256": "c468824e6c5eb747d232bde86e4f23700dcae1410333d6384bdb6cb08e61894f",
+      "original_sha256": "c468824e6c5eb747d232bde86e4f23700dcae1410333d6384bdb6cb08e61894f",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/LINKS.txt",
+      "sha256": "9ddf7588ad231db7f3fe2345d86c853c4811b3001b91d480a58d4b96a97d3819",
+      "original_sha256": "9ddf7588ad231db7f3fe2345d86c853c4811b3001b91d480a58d4b96a97d3819",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/README.md",
+      "sha256": "1a7b1b4586f4e077f07c873834b155ec06c7e54613c552b6df7aad46e0821ddc",
+      "original_sha256": "1a7b1b4586f4e077f07c873834b155ec06c7e54613c552b6df7aad46e0821ddc",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/evaluation/golden/v1.json",
+      "sha256": "c35be99dbf15d2b9fff4e4aa479c6de5c03ddccfc9fff80a5ab2b38d548cf199",
+      "original_sha256": "c35be99dbf15d2b9fff4e4aa479c6de5c03ddccfc9fff80a5ab2b38d548cf199",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/evaluation/golden/v1.sha256",
+      "sha256": "a0575e7b7ca9093fda2b113af5cf2cf369800ac8fdb0aad97693fcad71ad816b",
+      "original_sha256": "a0575e7b7ca9093fda2b113af5cf2cf369800ac8fdb0aad97693fcad71ad816b",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/evaluation/holdout/v1.json",
+      "sha256": "1965d096ebcf40d9c41a95ea519ec6f231456100a5b72f972149c92e3395ceee",
+      "original_sha256": "1965d096ebcf40d9c41a95ea519ec6f231456100a5b72f972149c92e3395ceee",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/evaluation/holdout/v1.sha256",
+      "sha256": "8176b9e29cddf5539938654e7bcd343e5e87c5706a164d1be5a3c9108af5a4a4",
+      "original_sha256": "8176b9e29cddf5539938654e7bcd343e5e87c5706a164d1be5a3c9108af5a4a4",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/FINAL_VALIDATION-v1.md",
+      "sha256": "78d15542e6796701a2219b955ad95c5ff7613c7e6e32267addf9666eb0989594",
+      "original_sha256": "78d15542e6796701a2219b955ad95c5ff7613c7e6e32267addf9666eb0989594",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/HOLDOUT_REPORT-v1.md",
+      "sha256": "dbbf4466aac74bf3913888377648fe72815bfd0c0d044783f29b21ee5db87df8",
+      "original_sha256": "dbbf4466aac74bf3913888377648fe72815bfd0c0d044783f29b21ee5db87df8",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/IMPROVEMENT_REPORT-v1.md",
+      "sha256": "41ebd91cdab118b8830c799e844234f1549c1bd9488111edd02d3eba94305110",
+      "original_sha256": "41ebd91cdab118b8830c799e844234f1549c1bd9488111edd02d3eba94305110",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/LANGSMITH_PROPOSAL.md",
+      "sha256": "b04a8f13c74056f37f0a9c610aeea7058cbae1c7b0bfdc9b76f25aee61101589",
+      "original_sha256": "b04a8f13c74056f37f0a9c610aeea7058cbae1c7b0bfdc9b76f25aee61101589",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/POST_HOLDOUT_REMEDIATION-v1.md",
+      "sha256": "d7ce5e96d0ea51b0ef786859cf55e9ee4566c46ae8cb65f7f927928139039a05",
+      "original_sha256": "d7ce5e96d0ea51b0ef786859cf55e9ee4566c46ae8cb65f7f927928139039a05",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/PREPARATION_REPORT.md",
+      "sha256": "c5d515e515b9cd49915d8cb19daf5166dfe5b4a26ecc7b368f1f3376c0f9e423",
+      "original_sha256": "c5d515e515b9cd49915d8cb19daf5166dfe5b4a26ecc7b368f1f3376c0f9e423",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/README.md",
+      "sha256": "05cccdab13b86bd693d8fc4027d579d8149cb124fdb4d50c98607139a3becfdf",
+      "original_sha256": "05cccdab13b86bd693d8fc4027d579d8149cb124fdb4d50c98607139a3becfdf",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/RUBRIC.md",
+      "sha256": "f60d75bbc6aa6329cd0000b32f13de4938c3ba9e7e96d5718075d43eff83fea8",
+      "original_sha256": "f60d75bbc6aa6329cd0000b32f13de4938c3ba9e7e96d5718075d43eff83fea8",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/__init__.py",
+      "sha256": "873aa54846ae3d5146733dfde0fc87266a9dbda8167f79ff1b7d3c491805547e",
+      "original_sha256": "873aa54846ae3d5146733dfde0fc87266a9dbda8167f79ff1b7d3c491805547e",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/approval.example.json",
+      "sha256": "e723a44d986e2e58c5187cf47231e50d49744cbddbe263f9f10fa58c4a6fd653",
+      "original_sha256": "e723a44d986e2e58c5187cf47231e50d49744cbddbe263f9f10fa58c4a6fd653",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/golden/REVIEW-v1.md",
+      "sha256": "2308a31a538d30da71b1e40991f03b03832d247732da4e17db44f58bc0ef04d3",
+      "original_sha256": "2308a31a538d30da71b1e40991f03b03832d247732da4e17db44f58bc0ef04d3",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/golden/v1.json",
+      "sha256": "c35be99dbf15d2b9fff4e4aa479c6de5c03ddccfc9fff80a5ab2b38d548cf199",
+      "original_sha256": "c35be99dbf15d2b9fff4e4aa479c6de5c03ddccfc9fff80a5ab2b38d548cf199",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/golden/v1.sha256",
+      "sha256": "a0575e7b7ca9093fda2b113af5cf2cf369800ac8fdb0aad97693fcad71ad816b",
+      "original_sha256": "a0575e7b7ca9093fda2b113af5cf2cf369800ac8fdb0aad97693fcad71ad816b",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/holdout/v1.json",
+      "sha256": "1965d096ebcf40d9c41a95ea519ec6f231456100a5b72f972149c92e3395ceee",
+      "original_sha256": "1965d096ebcf40d9c41a95ea519ec6f231456100a5b72f972149c92e3395ceee",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/holdout/v1.sha256",
+      "sha256": "8176b9e29cddf5539938654e7bcd343e5e87c5706a164d1be5a3c9108af5a4a4",
+      "original_sha256": "8176b9e29cddf5539938654e7bcd343e5e87c5706a164d1be5a3c9108af5a4a4",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/holdout.py",
+      "sha256": "07bcc846879b0ece2dedd5e6b2798b620d08b73af499c29ec432799fd3694813",
+      "original_sha256": "07bcc846879b0ece2dedd5e6b2798b620d08b73af499c29ec432799fd3694813",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/holdout_worker.py",
+      "sha256": "544fa97903d98e0c1e82fa8a23dcda02962caf066b01e1c08066bf36830dc1d0",
+      "original_sha256": "544fa97903d98e0c1e82fa8a23dcda02962caf066b01e1c08066bf36830dc1d0",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/instrumentation.py",
+      "sha256": "43e7bdabada5640b85798994eaa2ce46fab200174fdded7752c32d6839391cee",
+      "original_sha256": "43e7bdabada5640b85798994eaa2ce46fab200174fdded7752c32d6839391cee",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/remediation.py",
+      "sha256": "0d1e9436128a539dc0418dd3ac09e0bf79f6ffb53255bb9a6e1f7b0ac7832628",
+      "original_sha256": "0d1e9436128a539dc0418dd3ac09e0bf79f6ffb53255bb9a6e1f7b0ac7832628",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/remediation_worker.py",
+      "sha256": "dc8d80234643c0e9aac5cf51f18167baf3e4645047b80a7136e9a16928eb87fb",
+      "original_sha256": "dc8d80234643c0e9aac5cf51f18167baf3e4645047b80a7136e9a16928eb87fb",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/runner.py",
+      "sha256": "6b698e47ea26e0d4a5c451164e0c3abab081175208556c0cb612b9f03486e454",
+      "original_sha256": "6b698e47ea26e0d4a5c451164e0c3abab081175208556c0cb612b9f03486e454",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/scoring.py",
+      "sha256": "e110070908d9c69ea82652191e2084fe3657a9278009c1635e6b4bce50af35c9",
+      "original_sha256": "e110070908d9c69ea82652191e2084fe3657a9278009c1635e6b4bce50af35c9",
+      "redacted": false
+    },
+    {
+      "path": "evaluation/verify.py",
+      "sha256": "a8b659275bde0c8c24e03dbf52a4e60a2927c894584749ba0a5fc4fba9f9e1fe",
+      "original_sha256": "a8b659275bde0c8c24e03dbf52a4e60a2927c894584749ba0a5fc4fba9f9e1fe",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/regression-test-sources/test_evaluation_framework.py.txt",
+      "sha256": "24c7e56063617c449646e854c168af80585a5ebd8b91d7c8f04ae6c85bb52296",
+      "original_sha256": "24c7e56063617c449646e854c168af80585a5ebd8b91d7c8f04ae6c85bb52296",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/regression-test-sources/test_answer_completeness.py.txt",
+      "sha256": "75578394040d200e64c3b730034522cc092be384ca3d557b6361f2bd637f6345",
+      "original_sha256": "75578394040d200e64c3b730034522cc092be384ca3d557b6361f2bd637f6345",
+      "redacted": false
+    },
+    {
+      "path": "docs/week4/regression-test-sources/test_holdout_remediation.py.txt",
+      "sha256": "44094f0ed76ecd829eb42c124a6e6476140d9bce7cec2f8b7f2f6489051126e4",
+      "original_sha256": "44094f0ed76ecd829eb42c124a6e6476140d9bce7cec2f8b7f2f6489051126e4",
+      "redacted": false
+    }
+  ],
+  "reviewer_identifier_redacted_files": [
+    "03-author-review/completed-review.csv",
+    "03-author-review/sample-agreement.json"
+  ],
+  "omitted_internal_artifacts": [
+    "02-evaluation-evidence/golden-initial-improved/source-snapshot-manifest.json",
+    "02-evaluation-evidence/remediation-integrity.json",
+    "02-evaluation-evidence/remediation-source-snapshot-manifest.json",
+    "03-author-review/import-provenance.json",
+    "03-author-review/preservation-verification.json",
+    "MANIFEST.json",
+    "SHA256SUMS",
+    "VERIFICATION.json"
+  ],
+  "runtime_and_deployment_changes": 0,
+  "regression_tests": "Verbatim .py.txt sources, archived for isolated source-version replay."
+}

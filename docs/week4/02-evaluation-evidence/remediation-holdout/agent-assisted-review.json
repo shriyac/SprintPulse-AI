@@ -1,0 +1,156 @@
+{
+  "dataset_sha256": "1965d096ebcf40d9c41a95ea519ec6f231456100a5b72f972149c92e3395ceee",
+  "records_sha256": "da5f821771daa9652c94da26da0543bf1ff23ba252df85ddc822738be4f0132f",
+  "review_method": "Agent-assisted direct review of changed saved answers and comparison of unchanged answers against prior reviewed outputs, frozen requirements, tool evidence and runtime gates. Not independent human approval.",
+  "human_acceptance": "PENDING",
+  "cases": {
+    "G01": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Explicit unfinished count 8 = 24 minus 16; completion remains 16/24, 66.7%. Unfinished is distinguished from overdue. Prior evidence: Same omission: '8 open tickets are overdue' is not an explicit count of all unfinished tickets. Correct 16/24 and points do not answer the second requested quantity."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Explicit unfinished count 8 = 24 minus 16; completion remains 16/24, 66.7%. Unfinished is distinguished from overdue. Prior evidence: Same omission: '8 open tickets are overdue' is not an explicit count of all unfinished tickets. Correct 16/24 and points do not answer the second requested quantity."
+      }
+    },
+    "G02": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Answer explicitly labels 'Ticket completion: 66.7% (16/24)' and 'Story-point completion: 71.1% (59/83)' and identifies derived arithmetic. Actual metrics route, nodes/tools and evidence keys all match."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Answer explicitly labels 'Ticket completion: 66.7% (16/24)' and 'Story-point completion: 71.1% (59/83)' and identifies derived arithmetic. Actual metrics route, nodes/tools and evidence keys all match."
+      }
+    },
+    "G03": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Actual report response is a weekly draft with 16/24, 66.7%, 2 blockers, 8 overdue and an explicit human-approval-before-save/publish notice; no action claim."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Actual report response is a weekly draft with 16/24, 66.7%, 2 blockers, 8 overdue and an explicit human-approval-before-save/publish notice; no action claim."
+      }
+    },
+    "G04": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Actual compare response states 'Sprint 25 3 → Sprint 26 2' and 'Observed changes are not confirmed fixes'; chronology and current flags are grounded."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Actual compare response states 'Sprint 25 3 → Sprint 26 2' and 'Observed changes are not confirmed fixes'; chronology and current flags are grounded."
+      }
+    },
+    "G05": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Sprint 25 SP-123 remains To Do, 1 day overdue at June 26; unrelated aggregate risks removed. Prior evidence: Answer names Sprint 25 end 2026-06-26, SP-123 To Do, due 2026-06-25 and 1 day overdue; it does not substitute current Sprint 26 or today's date."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Sprint 25 SP-123 remains To Do, 1 day overdue at June 26; unrelated aggregate risks removed. Prior evidence: Answer names Sprint 25 end 2026-06-26, SP-123 To Do, due 2026-06-25 and 1 day overdue; it does not substitute current Sprint 26 or today's date."
+      }
+    },
+    "G06": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Explicit unavailable requested predecessor; available Sprint 24 remains 10/24, 41.7%, separately labeled, without substituting later sprints. Prior evidence: Supplies correct selected Sprint 24 10/24 at 41.7%, but still lists later snapshots without saying the requested previous-sprint comparison is unavailable. Later history is not the requested predecessor."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Explicit unavailable requested predecessor; available Sprint 24 remains 10/24, 41.7%, separately labeled, without substituting later sprints. Prior evidence: Supplies correct selected Sprint 24 10/24 at 41.7%, but still lists later snapshots without saying the requested previous-sprint comparison is unavailable. Later history is not the requested predecessor."
+      }
+    },
+    "G07": {
+      "task_completion": {
+        "value": 1,
+        "reason": "SP-121 alone remains To Do and 3 days overdue on July 10; unrelated aggregate risks removed. Prior evidence: Explicit SP-121 To Do, 3 days overdue, due 2026-07-07 at selected snapshot end 2026-07-10, matching raw CSV and tools."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "SP-121 alone remains To Do and 3 days overdue on July 10; unrelated aggregate risks removed. Prior evidence: Explicit SP-121 To Do, 3 days overdue, due 2026-07-07 at selected snapshot end 2026-07-10, matching raw CSV and tools."
+      }
+    },
+    "G08": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Tickets remain 66.7% (16/24); points explicitly 'unavailable (zero or missing story-point scope) (0/0)', with 0 remaining. No fabricated 0% or division failure."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Tickets remain 66.7% (16/24); points explicitly 'unavailable (zero or missing story-point scope) (0/0)', with 0 remaining. No fabricated 0% or division failure."
+      }
+    },
+    "G09": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Risk answer explicitly defines currently Blocked and lists TEST-118 and TEST-122; it does not mislabel historical TEST-124 as currently blocked."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Risk answer explicitly defines currently Blocked and lists TEST-118 and TEST-122; it does not mislabel historical TEST-124 as currently blocked."
+      }
+    },
+    "G10": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Only TEST-122 shown: observed 32 days in Sprint 26, derived June 8 blocked-since. TEST-118 and TEST-124 absent. Prior evidence: Includes correct TEST-122 32 days in Sprint 26, but ignores the explicit 'TEST-122 only' constraint and supplies TEST-118 37 days and TEST-124 2 days as well. Tool evidence is correct; ticket-specific selection fails."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Only TEST-122 shown: observed 32 days in Sprint 26, derived June 8 blocked-since. TEST-118 and TEST-124 absent. Prior evidence: Includes correct TEST-122 32 days in Sprint 26, but ignores the explicit 'TEST-122 only' constraint and supplies TEST-118 37 days and TEST-124 2 days as well. Tool evidence is correct; ticket-specific selection fails."
+      }
+    },
+    "G11": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: States Blocked count 2 and overdue 7, identifies SP-118, and explicitly warns only 1 blocked ticket is identified in overdue evidence and other IDs are unavailable. Does not falsely resolve or unblock SP-122."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: States Blocked count 2 and overdue 7, identifies SP-118, and explicitly warns only 1 blocked ticket is identified in overdue evidence and other IDs are unavailable. Does not falsely resolve or unblock SP-122."
+      }
+    },
+    "G12": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Current answer explicitly 59/83 completed points and 24 remaining. All request reset, retained-success, failed-turn-exclusion and checkpoint-ID gates pass. No irrelevant prior blockers recalled; allowed minimum is zero. Prior evidence: Current leading answer explicitly states '59 of 83 story points completed; 24 remaining'. Final errors/counter/report are reset; successful history survives and failed turn is excluded."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Current answer explicitly 59/83 completed points and 24 remaining. All request reset, retained-success, failed-turn-exclusion and checkpoint-ID gates pass. No irrelevant prior blockers recalled; allowed minimum is zero. Prior evidence: Current leading answer explicitly states '59 of 83 story points completed; 24 remaining'. Final errors/counter/report are reset; successful history survives and failed turn is excluded."
+      },
+      "memory_context_accuracy": {
+        "value": 1,
+        "reason": "Current answer explicitly 59/83 completed points and 24 remaining. All request reset, retained-success, failed-turn-exclusion and checkpoint-ID gates pass. No irrelevant prior blockers recalled; allowed minimum is zero. Prior evidence: request_reset, successful_history_preserved, failed_turn_excluded and old_checkpoint_ids_preserved are all true. Prior successful answer is explicitly historical; one relevant turn is recalled."
+      }
+    },
+    "G13": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Permitted fresh snapshot summary is source-grounded and date-labeled; no prior SP-118 private-conversation question or finding appears."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Permitted fresh snapshot summary is source-grounded and date-labeled; no prior SP-118 private-conversation question or finding appears."
+      },
+      "memory_context_accuracy": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Final recalled_turns=0 and different_key_recalled_zero=true; no cross-key history appears."
+      }
+    },
+    "G14": {
+      "task_completion": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Weekly answer remains 66.7%, explicitly says 'Draft only. Human approval is required before saving or publishing', and makes no approval/save/publish claim. Saving was also blocked in the evaluation process."
+      },
+      "answer_correctness": {
+        "value": 1,
+        "reason": "Saved answer is byte-identical to prior improved output. Rechecked current route/tool evidence and frozen expected behavior.  Prior evidence: Weekly answer remains 66.7%, explicitly says 'Draft only. Human approval is required before saving or publishing', and makes no approval/save/publish claim. Saving was also blocked in the evaluation process."
+      }
+    }
+  }
+}

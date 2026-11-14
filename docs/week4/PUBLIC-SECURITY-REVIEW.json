@@ -1,0 +1,16 @@
+{
+  "github_base_main": "499b5c605e1b6d1d1680982aaab360d62737f15b",
+  "base_history_commits_scanned": 2,
+  "reachable_blobs_scanned": 160,
+  "public_files_scanned": 162,
+  "python_sources_syntax_checked": 63,
+  "sensitive_content_candidates": 0,
+  "private_reviewer_identifiers_in_new_tree": 0,
+  "preexisting_github_files_byte_identical": 161,
+  "frozen_labels_and_rubric_changed": false,
+  "completed_worksheet_changes": "Reviewer alias redacted; all other fields unchanged.",
+  "application_tests_or_evaluations_executed": 0,
+  "history_relationship": "Fast-forward descendant of existing GitHub main; no local checkpoint history imported.",
+  "security_limits": "Allowlisted export, explicit credential/provider/identifier checks and reachable-history scan, not a formal comprehensive secret-detection guarantee.",
+  "nonsecret_fixture_exception": "One exact example.invalid connection literal in the regression redaction test; source kept unchanged, no real credentials."
+}

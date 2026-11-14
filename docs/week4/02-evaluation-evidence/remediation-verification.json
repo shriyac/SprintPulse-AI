@@ -1,0 +1,24 @@
+{
+  "golden": {
+    "final_requests": 40,
+    "setup_requests": 7,
+    "tool_assertions_passed": 82,
+    "tool_assertions_total": 82,
+    "network_attempts": 0,
+    "live_llm_calls": 0,
+    "generation_stub_entries": 44,
+    "unexpected_graph_exceptions": 0,
+    "regressions": []
+  },
+  "holdout": {
+    "final_requests": 14,
+    "setup_requests": 3,
+    "tool_assertions_passed": 31,
+    "tool_assertions_total": 31,
+    "network_attempts": 0,
+    "live_llm_calls": 0,
+    "generation_stub_entries": 16,
+    "unexpected_graph_exceptions": 0,
+    "regressions": []
+  }
+}

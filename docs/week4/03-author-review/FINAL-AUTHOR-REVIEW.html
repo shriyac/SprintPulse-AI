@@ -1,0 +1,57 @@
+<!doctype html><meta charset="utf-8"><title>SprintPulse AI Week 4 author review</title><style>body{font:16px system-ui;max-width:1100px;margin:32px auto;padding:18px}pre{font:15px/1.6 system-ui;white-space:pre-wrap;overflow-wrap:anywhere}</style><pre># SprintPulse AI Week 4 — final author spot-check report
+
+**Status: COMPLETE AUTHOR REVIEW — not independent third-party review.**
+
+Imported the completed workbook through the existing unmodified offline
+agreement-import workflow. Verified 15 unique expected IDs, all immutable
+questions, responses, source/runtime evidence and criteria, 0/1 decisions,
+nonblank notes, aliases, review dates and author-review attestations.
+
+- Human PASS: **15/15**; human FAIL: **0/15**.
+- Agreement with provisional automated predictions: **15/15 (100%)**.
+- Disagreements: **0**. Pending sample decisions: **0**.
+- Review date recorded in workbook: **2026-11-12**.
+  Excel serial dates were converted to ISO text; no review date was invented.
+
+## Agreement by evaluation criterion
+
+| Criterion | Reviewed | Agreements | Agreement |
+|---|---:|---:|---:|
+| Answer Correctness | 5/5 | 5/5 | 100% |
+| Memory Context Accuracy | 3/3 | 3/3 | 100% |
+| Task Completion | 7/7 | 7/7 | 100% |
+
+## Case-level author judgments
+
+| Judgment ID | Human | Provisional prediction | Agreement |
+|---|---|---|---|
+| R-G01/task_completion | PASS | PASS | Yes |
+| R-G06/answer_correctness | PASS | PASS | Yes |
+| R-G10/answer_correctness | PASS | PASS | Yes |
+| R-K01/answer_correctness | PASS | PASS | Yes |
+| R-K04/task_completion | PASS | PASS | Yes |
+| R-E06/task_completion | PASS | PASS | Yes |
+| R-E07/task_completion | PASS | PASS | Yes |
+| R-A01/task_completion | PASS | PASS | Yes |
+| R-H01/answer_correctness | PASS | PASS | Yes |
+| R-H20/task_completion | PASS | PASS | Yes |
+| R-E08/task_completion | PASS | PASS | Yes |
+| R-G12/memory_context_accuracy | PASS | PASS | Yes |
+| R-G13/memory_context_accuracy | PASS | PASS | Yes |
+| R-E11/memory_context_accuracy | PASS | PASS | Yes |
+| R-G04/answer_correctness | PASS | PASS | Yes |
+
+The exact submitted notes and reviewer metadata are retained in
+`completed-review.csv` and `sample-agreement.json`. Provenance and source hashes
+are in `import-provenance.json`. No original blank review fields were filled.
+
+## Limitations
+
+- This is author review, not independent third-party review. Metadata is the reviewer&#x27;s recorded declaration, not independently verified identity.
+- The 15 judgments cover 15 distinct cases: 7 task completion, 5 correctness and 3 memory/context. This is 15 of 115 applicable judgments; the other 100 judgments are not human-reviewed by this import.
+- The sample was purposive and risk-stratified, not random. Its 100% agreement cannot be extrapolated to all cases or treated as full-dataset accuracy.
+- All sampled automated predictions were PASS. There were no FAIL predictions available, so the sample does not establish failure-detection sensitivity or agreement on FAIL predictions.
+- Agreement is with provisional automated qualitative predictions, not an external ground-truth adjudication. Preserved automated predictions remain provisional outside the reviewed sample.
+- This final-agent sample does not independently approve baseline-to-improved deltas. Original unseen holdout performance remains 11/14; later 14/14 is post-holdout remediation, not new unseen generalization.
+- No new live-LLM behavior, latency, production persistence or deployed behavior was verified.
+</pre>

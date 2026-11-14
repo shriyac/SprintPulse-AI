@@ -1,0 +1,47 @@
+{
+  "task_completion": {
+    "value": 1.0,
+    "target": 0.95,
+    "applicable_denominator": 40,
+    "scored": 40,
+    "pending": 0,
+    "not_applicable": 0,
+    "passed": true
+  },
+  "answer_correctness": {
+    "value": 1.0,
+    "target": 0.95,
+    "applicable_denominator": 38,
+    "scored": 38,
+    "pending": 0,
+    "not_applicable": 2,
+    "passed": true
+  },
+  "tool_routing_accuracy": {
+    "value": 1.0,
+    "target": 0.95,
+    "applicable_denominator": 40,
+    "scored": 40,
+    "pending": 0,
+    "not_applicable": 0,
+    "passed": true
+  },
+  "memory_context_accuracy": {
+    "value": 1.0,
+    "target": 1.0,
+    "applicable_denominator": 7,
+    "scored": 7,
+    "pending": 0,
+    "not_applicable": 33,
+    "passed": true
+  },
+  "p95_latency": {
+    "value": 93.482,
+    "target": 2000,
+    "applicable_denominator": 40,
+    "scored": 40,
+    "pending": 0,
+    "not_applicable": 0,
+    "passed": true
+  }
+}

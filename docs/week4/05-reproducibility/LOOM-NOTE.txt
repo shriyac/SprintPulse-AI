@@ -1,0 +1,5 @@
+Record a Loom of five minutes or less from saved evidence only.
+Use the archived4:50 outline, replacing its pending-review segment with:
+15/15 author PASS;100% sample agreement;7task/5correctness/3memory;
+not independent third-party review and not full-dataset human sign-off.
+Paste the actual URL into LINKS.txt after recording. No recording is claimed.
