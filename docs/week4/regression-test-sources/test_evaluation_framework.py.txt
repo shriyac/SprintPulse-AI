@@ -1,0 +1,309 @@
+"""Infrastructure only: never execute a SprintPulse golden baseline case."""
+from argparse import Namespace
+from contextlib import ExitStack
+import json
+from pathlib import Path
+import uuid
+
+import pytest
+from langgraph.graph import END, START, StateGraph
+
+from evaluation.instrumentation import Capture, NodeObserver, ObservedGraph, instrument, redact
+from evaluation.runner import require_approval, run
+from evaluation.scoring import nearest_rank_p95, scored, score_case, summarize
+from evaluation.verify import DATASET, METRICS, ROOT, digest, load_dataset, lookup, source_facts, verify
+from tools.sprint_data import load_sprint_data
+
+
+def test_golden_counts_sources_and_independent_csv_oracle():
+    result = verify()
+    assert result["categories"] == {"happy": 20, "edge": 12, "known_failure": 6, "adversarial": 2}
+    assert result["source_ground_truth_verified"] == 40
+    assert result["partial_intent_review_required"] == 0
+    assert result["factual_assertions_verified"] == 82
+    assert result["baseline_cases_executed"] == 0
+    assert result["other_34_cases_unchanged"]
+    assert result["frozen_checksum_verified"]
+    assert result["approved_behavior_support"]["K04_derived_story_point_completion_pct"] == 71.1
+
+
+def test_changed_data_hash_is_not_silently_accepted(tmp_path):
+    dataset = load_dataset()
+    dataset["source_hashes"]["data/sprint_01.csv"] = "0" * 64
+    path = tmp_path / "changed.json"
+    path.write_text(json.dumps(dataset))
+    with pytest.raises(ValueError, match="Source data changed"):
+        verify(path)
+
+
+def test_wrong_factual_expectation_is_rejected(tmp_path):
+    dataset = load_dataset()
+    dataset["cases"][0]["checks"][0][1] = 100.0
+    path = tmp_path / "wrong.json"
+    path.write_text(json.dumps(dataset))
+    with pytest.raises(ValueError, match="expected value mismatch"):
+        verify(path)
+
+
+def test_baseline_routing_observations_stay_frozen_after_repairs():
+    from agents.graph import classify_route
+    cases = [c for c in load_dataset()["cases"] if c["category"] == "known_failure"]
+    assert len(cases) == 6
+    assert all(c["observed_source_route"] != c["route"] for c in cases)
+    assert all(classify_route(c["prompt"]) == c["route"] for c in cases)
+    assert all(c["ground_truth_status"] == "source_verified_user_approved" for c in cases)
+
+
+def test_verifier_reports_routing_regressions_without_blocking_measurement(monkeypatch):
+    import agents.graph as graph
+    monkeypatch.setattr(graph, "classify_route", lambda question: "question")
+    result = verify()
+    assert result["source_route_differences"]
+    assert result["source_ground_truth_verified"] == 40
+    assert result["baseline_cases_executed"] == 0
+    assert any(d["case_id"] == "K01" for d in result["source_route_differences"])
+
+
+def test_other_34_case_text_cannot_change_silently(tmp_path):
+    dataset = load_dataset()
+    dataset["cases"][0]["required_answer"] += " Unapproved extra requirement."
+    path = tmp_path / "changed_text.json"
+    path.write_text(json.dumps(dataset))
+    with pytest.raises(ValueError, match="other 34 frozen cases"):
+        verify(path)
+
+
+def test_frozen_dataset_checksum_detects_metadata_tampering(tmp_path, monkeypatch):
+    import importlib
+    verifier = importlib.import_module("evaluation.verify")
+    dataset = load_dataset()
+    dataset["description"] += " Unapproved metadata change."
+    path = tmp_path / "v1.json"
+    path.write_text(json.dumps(dataset))
+    monkeypatch.setattr(verifier, "DATASET", path)
+    with pytest.raises(ValueError, match="Frozen v1 checksum mismatch"):
+        verifier.verify(path)
+
+
+def test_approved_case_refinements_and_percentage_provenance():
+    cases = {c["id"]: c for c in load_dataset()["cases"]}
+    assert "observed changes from confirmed fixes" in cases["K01"]["required_answer"]
+    assert "operational definition" in cases["K02"]["required_answer"]
+    assert "does not authorize saving or publishing" in cases["K03"]["required_answer"]
+    assert "either asking" in cases["K04"]["required_answer"]
+    assert "71.1% (59/83)" in cases["K04"]["required_answer"]
+    assert "single unlabeled percentage must fail" in cases["K04"]["required_answer"]
+    assert "chronologically" in cases["K05"]["required_answer"]
+    assert cases["K06"]["required_answer"] == "16 completed tickets out of 24 for the selected Sprint 26."
+    assert sum(len(c["checks"]) for c in cases.values()) == 82
+
+
+def test_nearest_rank_p95_not_an_interpolated_or_mean_latency():
+    assert nearest_rank_p95(list(range(1, 21))) == 19
+    assert nearest_rank_p95([10]) == 10
+    assert nearest_rank_p95([]) is None
+
+
+def test_na_excluded_but_pending_does_not_shrink_denominator():
+    first = {"scores": {m: scored(1) for m in METRICS}}
+    second = {"scores": {m: scored(0) for m in METRICS}}
+    second["scores"]["memory_context_accuracy"] = scored(reason="No recall requirement")
+    second["scores"]["answer_correctness"] = scored()
+    result = summarize([first, second], "deterministic")
+    assert result["memory_context_accuracy"]["applicable_denominator"] == 1
+    assert result["memory_context_accuracy"]["value"] == 1
+    assert result["task_completion"]["value"] == 0.5
+    assert result["answer_correctness"]["value"] is None
+    assert result["answer_correctness"]["pending"] == 1
+    assert result["answer_correctness"]["applicable_denominator"] == 2
+
+
+def test_approval_requires_exact_dataset_hash_and_explicit_review(tmp_path):
+    path = tmp_path / "approval.json"
+    path.write_text(json.dumps({"approved": False}))
+    with pytest.raises(ValueError, match="approval"):
+        require_approval(path, DATASET)
+    valid = {
+        "approved": True, "dataset_sha256": digest(DATASET),
+        "reviewer_alias": "test-only", "reviewed_at": "2026-10-27T00:00:00Z",
+    }
+    path.write_text(json.dumps(valid))
+    require_approval(path, DATASET)  # only validates a file; does not run cases
+    valid["dataset_sha256"] = "0" * 64
+    path.write_text(json.dumps(valid))
+    with pytest.raises(ValueError, match="mismatched"):
+        require_approval(path, DATASET)
+
+
+def test_run_stops_before_agent_when_review_is_missing(tmp_path, monkeypatch):
+    import agents.graph as graph
+    monkeypatch.setattr(graph, "invoke_sprint_graph", lambda *a, **k: pytest.fail("Baseline must not run"))
+    monkeypatch.delenv("REPLIT_DEPLOYMENT", raising=False)
+    path = tmp_path / "approval.json"
+    path.write_text('{"approved": false}')
+    with pytest.raises(ValueError, match="approval"):
+        run(Namespace(approval=path, dataset=DATASET))
+
+
+def test_production_is_rejected_before_graph_or_storage(monkeypatch):
+    monkeypatch.setenv("REPLIT_DEPLOYMENT", "1")
+    with pytest.raises(ValueError, match="development-only"):
+        run(Namespace())
+
+
+def test_real_callback_contract_with_unrelated_tiny_graph():
+    # This is NOT SprintPulse or a golden request. Only callback plumbing is tested.
+    capture = Capture()
+    graph = StateGraph(dict)
+    graph.add_node("answer", lambda state: {"wiring_test": True})
+    graph.add_edge(START, "answer")
+    graph.add_edge("answer", END)
+    observed = ObservedGraph(graph.compile(), NodeObserver(capture))
+    from langsmith import tracing_context
+    with tracing_context(enabled=False):
+        assert observed.invoke({}) == {"wiring_test": True}
+    assert capture.nodes == [{"node": "answer", "phase": "evaluation"}]
+
+
+def test_tool_instrumentation_captures_nested_calls_and_restores_originals():
+    from agents import graph
+    from tools import sprint_metrics
+    original = graph.risk_flags
+    capture = Capture()
+    with ExitStack() as stack:
+        instrument(stack, capture, "deterministic")
+        graph.risk_flags(load_sprint_data(ROOT / "data")["Sprint 26"])
+        assert [x["tool"] for x in capture.tools] == ["risk_flags", "sprint_metrics"]
+        assert capture.tools[1]["parent_call_id"] == capture.tools[0]["call_id"]
+        assert all(x["status"] == "ok" for x in capture.tools)
+    assert graph.risk_flags is original
+    assert sprint_metrics.risk_flags is original
+
+
+def test_injected_failure_is_recorded_once_without_retrying():
+    from agents import graph
+    capture = Capture(fail_overdue=True)
+    with ExitStack() as stack:
+        instrument(stack, capture, "deterministic")
+        with pytest.raises(RuntimeError, match="Controlled evaluation"):
+            graph.overdue_tasks(load_sprint_data(ROOT / "data")["Sprint 26"])
+    assert len(capture.tools) == 1 and capture.tools[0]["status"] == "error"
+
+
+def example_record():
+    dataset = load_dataset()
+    case = next(c for c in dataset["cases"] if c["id"] == "H02")
+    facts = source_facts(load_sprint_data(ROOT / "data"), case["sprint"])
+    result = {
+        "route": "metrics", "response": "16 of 24 tickets, 66.7%.",
+        "tool_outputs": {k: facts[k] for k in ("sprint", "overdue_tasks")},
+        "error": None, "errors": [], "error_count": 0,
+    }
+    trace = {
+        "nodes": [{"node": n, "phase": "evaluation"} for n in (
+            "recall_conversation", "route_request", "retrieve_sprint_data", "remember_findings", "answer",
+        )],
+        "tools": [{"tool": t, "phase": "evaluation"} for t in dataset["route_contracts"]["metrics"]["tools"]],
+        "latency_ms": 12, "exception": None, "model_calls": [],
+        "live_llm_executed": False, "memory_observations": {},
+    }
+    return dataset, case, result, trace
+
+
+def test_correct_tools_never_automatically_pass_final_answer():
+    dataset, case, result, trace = example_record()
+    scores = score_case(case, result, trace, dataset, "deterministic")
+    assert scores["tool_routing_accuracy"]["value"] == 1
+    assert scores["answer_correctness"]["status"] == "PENDING"
+    assert scores["task_completion"]["status"] == "PENDING"
+    result["response"] = "100% completed."
+    scores = score_case(case, result, trace, dataset, "deterministic", {
+        "answer_correctness": {"value": 0, "reason": "Answer contradicts 66.7% tool truth."},
+    })
+    assert scores["answer_correctness"]["value"] == 0
+
+
+def test_human_score_requires_reason_and_empty_review_remains_pending():
+    dataset, case, result, trace = example_record()
+    scores = score_case(case, result, trace, dataset, "deterministic", {
+        "answer_correctness": {"value": None, "reason": ""},
+    })
+    assert scores["answer_correctness"]["status"] == "PENDING"
+    with pytest.raises(ValueError, match="reason"):
+        score_case(case, result, trace, dataset, "deterministic", {
+            "answer_correctness": {"value": 1, "reason": ""},
+        })
+
+
+def test_live_fallback_latency_is_not_hidden_from_p95():
+    dataset, case, result, trace = example_record()
+    scores = score_case(case, result, trace, dataset, "live")
+    assert scores["p95_latency"]["status"] == "SCORED"
+    assert scores["p95_latency"]["value"] == 12
+    assert not trace["live_llm_executed"]  # quality coverage remains separately false
+
+
+def test_redaction_omits_private_capabilities_and_credential_patterns():
+    from agents.memory import new_conversation_key
+    private = new_conversation_key()
+    output = redact({
+        "thread_id": str(uuid.uuid4()), "answer": f"{private} " + "sk-" + "x" * 30,
+        "url": "postgresql://synthetic_user:synthetic_password@example.invalid/db",
+    })
+    assert output["thread_id"] == "[REDACTED]"
+    assert private not in output["answer"]
+    assert "synthetic_password" not in output["url"]
+
+
+def test_lookup_is_identity_based_not_fragile_ticket_order():
+    assert lookup({"rows": [{"ticket_id": "SP-124", "status": "To Do"}]}, "rows.SP-124.status") == "To Do"
+    with pytest.raises(ValueError, match="missing"):
+        lookup({"rows": []}, "rows.SP-124.status")
+
+
+@pytest.mark.parametrize("scenario", ["plain", "injected_tool_text"])
+def test_execute_case_isolates_storage_and_memory_with_fake_agent_only(monkeypatch, scenario):
+    # Non-golden fixture and fake application invocation: no SprintPulse graph run.
+    import agents.graph as graph
+    from agents.semantic_memory import DisabledMemory
+    from evaluation.runner import execute_case
+    from reports import publisher
+
+    original_path = graph.CHECKPOINT_PATH
+    csv_path = ROOT / "data/sprint_03.csv"
+    before = digest(csv_path)
+    observed = {}
+
+    def fake_invoke(question, sprint, snapshots, thread_id):
+        observed["path"] = graph.CHECKPOINT_PATH
+        observed["summary"] = snapshots[sprint].loc[
+            snapshots[sprint].ticket_id == "SP-118", "summary"
+        ].iloc[0]
+        assert graph.CHECKPOINT_PATH != original_path
+        assert isinstance(graph.configured_semantic_memory(), DisabledMemory)
+        text, mode = graph.generate_grounded_text("unit-only task", {"synthetic": True})
+        assert text is None
+        with pytest.raises(RuntimeError, match="forbidden"):
+            publisher.save_approved_report("unit", sprint, Path("unused"))
+        return {
+            "route": "question", "tool_outputs": {}, "response": "unit-only fake answer",
+            "report": "", "error": None, "errors": [], "error_count": 0,
+            "generation_mode": mode, "recalled_turns": 0,
+        }
+
+    monkeypatch.setattr(graph, "invoke_sprint_graph", fake_invoke)
+    case = {
+        "id": "UNIT-WIRING", "category": "edge", "prompt": "unit-only",
+        "sprint": "Sprint 26", "route": "question", "scenario": scenario,
+        "checks": [], "memory": None, "na": ["memory_context_accuracy"],
+    }
+    row = execute_case(case, load_dataset(), "deterministic")
+    assert row["case_id"] == "UNIT-WIRING"
+    assert not row["trace"]["live_llm_executed"]
+    assert row["trace"]["nodes"] == []  # not falsely claiming real graph execution
+    assert row["scores"]["tool_routing_accuracy"]["value"] == 0
+    assert row["trace"]["mem0_backend"].startswith("DisabledMemory")
+    assert digest(csv_path) == before
+    assert ("EVAL_INJECTION_TRIPWIRE" in observed["summary"]) == (scenario == "injected_tool_text")
+    assert not observed["path"].parent.exists()
+    assert graph.CHECKPOINT_PATH == original_path

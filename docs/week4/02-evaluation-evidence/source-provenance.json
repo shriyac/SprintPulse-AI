@@ -1,0 +1,62 @@
+{
+  "Golden original baseline": {
+    "raw_records": ".local/evaluations/20261110T033345Z-e8181434/records.jsonl",
+    "raw_sha256": "1a271d17c4d73f7995682252b3b9d158ca97728b01a748d03b4c2ef7d3960d64",
+    "reviewed_records": ".local/evaluations/20261110T033345Z-e8181434/reviewed-records.jsonl",
+    "reviewed_sha256": "71cd4d51532ad35a23a7416954b555ed6f1cf384f2e8795963959a256f4c2874",
+    "version_filter": null,
+    "dataset_sha256": "c35be99dbf15d2b9fff4e4aa479c6de5c03ddccfc9fff80a5ab2b38d548cf199",
+    "cases": 40,
+    "qualitative_review": "Agent-assisted provisional; independent human approval pending"
+  },
+  "Golden initial improved": {
+    "raw_records": ".local/evaluations/20261110T035032Z-765dcbc8/records.jsonl",
+    "raw_sha256": "771db68ed1e52bb09f61b12b9e9fa21059ca9308843d9dc64e99cf39d17fec67",
+    "reviewed_records": ".local/evaluations/20261110T035032Z-765dcbc8/reviewed-records.jsonl",
+    "reviewed_sha256": "096deb54f8b61a0fd0e75e3b17cb54e3404f420fd5351bb8c914f03c5452e0e8",
+    "version_filter": null,
+    "dataset_sha256": "c35be99dbf15d2b9fff4e4aa479c6de5c03ddccfc9fff80a5ab2b38d548cf199",
+    "cases": 40,
+    "qualitative_review": "Agent-assisted provisional; independent human approval pending"
+  },
+  "Original holdout baseline": {
+    "raw_records": ".local/evaluations/holdout-v1-20261110T045936Z/records.jsonl",
+    "raw_sha256": "eea90e52cdd6bc4014332f2364337ebf88e2a2cbd6f840e7ac01642047b3a68c",
+    "reviewed_records": ".local/evaluations/holdout-v1-20261110T045936Z/reviewed-records.jsonl",
+    "reviewed_sha256": "907a8a4a559e0d9339e723ae558dd0f94e0d1930f48f348bab36399df8875d52",
+    "version_filter": "baseline",
+    "dataset_sha256": "1965d096ebcf40d9c41a95ea519ec6f231456100a5b72f972149c92e3395ceee",
+    "cases": 14,
+    "qualitative_review": "Agent-assisted provisional; independent human approval pending"
+  },
+  "Original holdout improved": {
+    "raw_records": ".local/evaluations/holdout-v1-20261110T045936Z/records.jsonl",
+    "raw_sha256": "eea90e52cdd6bc4014332f2364337ebf88e2a2cbd6f840e7ac01642047b3a68c",
+    "reviewed_records": ".local/evaluations/holdout-v1-20261110T045936Z/reviewed-records.jsonl",
+    "reviewed_sha256": "907a8a4a559e0d9339e723ae558dd0f94e0d1930f48f348bab36399df8875d52",
+    "version_filter": "improved",
+    "dataset_sha256": "1965d096ebcf40d9c41a95ea519ec6f231456100a5b72f972149c92e3395ceee",
+    "cases": 14,
+    "qualitative_review": "Agent-assisted provisional; independent human approval pending"
+  },
+  "Remediation golden replay": {
+    "raw_records": ".local/evaluations/post-holdout-remediation-20261111T011644Z/golden/records.jsonl",
+    "raw_sha256": "1d305c1d8212886def1801fd2794d70a8a3bebb4d0762c9ba91c5e4e7502d678",
+    "reviewed_records": ".local/evaluations/post-holdout-remediation-20261111T011644Z/golden/reviewed-records.jsonl",
+    "reviewed_sha256": "218c33f3fddfbceb5ef257768fcd524f9cbf8641d8c3c9c0e0ae1b033e1bd68b",
+    "version_filter": null,
+    "dataset_sha256": "c35be99dbf15d2b9fff4e4aa479c6de5c03ddccfc9fff80a5ab2b38d548cf199",
+    "cases": 40,
+    "qualitative_review": "Agent-assisted provisional; independent human approval pending"
+  },
+  "Remediation holdout replay": {
+    "raw_records": ".local/evaluations/post-holdout-remediation-20261111T011644Z/holdout/records.jsonl",
+    "raw_sha256": "da5f821771daa9652c94da26da0543bf1ff23ba252df85ddc822738be4f0132f",
+    "reviewed_records": ".local/evaluations/post-holdout-remediation-20261111T011644Z/holdout/reviewed-records.jsonl",
+    "reviewed_sha256": "b1344cdabf23b98901e4df39f165975b96edea53b85b88725be698c327867d46",
+    "version_filter": null,
+    "dataset_sha256": "1965d096ebcf40d9c41a95ea519ec6f231456100a5b72f972149c92e3395ceee",
+    "cases": 14,
+    "qualitative_review": "Agent-assisted provisional; independent human approval pending"
+  }
+}

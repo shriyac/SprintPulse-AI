@@ -1,0 +1,1494 @@
+[
+  {
+    "response_id": "R-H01",
+    "dataset": "golden",
+    "case_id": "H01",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 80.504,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      },
+      {
+        "path": "sprint.blocked_count",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      },
+      {
+        "path": "sprint.overdue_count",
+        "expected": 8,
+        "actual": 8,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H02",
+    "dataset": "golden",
+    "case_id": "H02",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 80.262,
+    "tool_checks": [
+      {
+        "path": "sprint.done_count",
+        "expected": 16,
+        "actual": 16,
+        "passed": true
+      },
+      {
+        "path": "sprint.total_tickets",
+        "expected": 24,
+        "actual": 24,
+        "passed": true
+      },
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H03",
+    "dataset": "golden",
+    "case_id": "H03",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 75.247,
+    "tool_checks": [
+      {
+        "path": "sprint.done_count",
+        "expected": 13,
+        "actual": 13,
+        "passed": true
+      },
+      {
+        "path": "sprint.total_tickets",
+        "expected": 24,
+        "actual": 24,
+        "passed": true
+      },
+      {
+        "path": "sprint.completion_rate",
+        "expected": 54.2,
+        "actual": 54.2,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H04",
+    "dataset": "golden",
+    "case_id": "H04",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 77.184,
+    "tool_checks": [
+      {
+        "path": "sprint.done_count",
+        "expected": 10,
+        "actual": 10,
+        "passed": true
+      },
+      {
+        "path": "sprint.total_tickets",
+        "expected": 24,
+        "actual": 24,
+        "passed": true
+      },
+      {
+        "path": "sprint.completion_rate",
+        "expected": 41.7,
+        "actual": 41.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H05",
+    "dataset": "golden",
+    "case_id": "H05",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 87.215,
+    "tool_checks": [
+      {
+        "path": "sprint.story_points_completed",
+        "expected": 59,
+        "actual": 59,
+        "passed": true
+      },
+      {
+        "path": "sprint.story_points_scope",
+        "expected": 83,
+        "actual": 83,
+        "passed": true
+      },
+      {
+        "path": "sprint.remaining_points",
+        "expected": 24,
+        "actual": 24,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H06",
+    "dataset": "golden",
+    "case_id": "H06",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 93.482,
+    "tool_checks": [
+      {
+        "path": "risk_flags.0.category",
+        "expected": "Open blockers",
+        "actual": "Open blockers",
+        "passed": true
+      },
+      {
+        "path": "risk_flags.1.category",
+        "expected": "Overdue work",
+        "actual": "Overdue work",
+        "passed": true
+      },
+      {
+        "path": "risk_flags.2.category",
+        "expected": "Completion below threshold",
+        "actual": "Completion below threshold",
+        "passed": true
+      },
+      {
+        "path": "sprint.blocked_count",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      },
+      {
+        "path": "sprint.overdue_count",
+        "expected": 8,
+        "actual": 8,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H07",
+    "dataset": "golden",
+    "case_id": "H07",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 78.965,
+    "tool_checks": [
+      {
+        "path": "overdue_tasks.$length",
+        "expected": 8,
+        "actual": 8,
+        "passed": true
+      },
+      {
+        "path": "overdue_tasks.SP-117.days_overdue",
+        "expected": 7,
+        "actual": 7,
+        "passed": true
+      },
+      {
+        "path": "overdue_tasks.SP-124.days_overdue",
+        "expected": 8,
+        "actual": 8,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H08",
+    "dataset": "golden",
+    "case_id": "H08",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 76.64,
+    "tool_checks": [
+      {
+        "path": "blocker_durations.SP-118.duration_days",
+        "expected": 37,
+        "actual": 37,
+        "passed": true
+      },
+      {
+        "path": "blocker_durations.SP-122.duration_days",
+        "expected": 32,
+        "actual": 32,
+        "passed": true
+      },
+      {
+        "path": "blocker_durations.SP-124.duration_days",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H09",
+    "dataset": "golden",
+    "case_id": "H09",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 74.122,
+    "tool_checks": [
+      {
+        "path": "recurring_blockers.$length",
+        "expected": 3,
+        "actual": 3,
+        "passed": true
+      },
+      {
+        "path": "recurring_blockers.SP-118.appearances",
+        "expected": 3,
+        "actual": 3,
+        "passed": true
+      },
+      {
+        "path": "recurring_blockers.SP-122.appearances",
+        "expected": 3,
+        "actual": 3,
+        "passed": true
+      },
+      {
+        "path": "recurring_blockers.SP-124.appearances",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H10",
+    "dataset": "golden",
+    "case_id": "H10",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 81.024,
+    "tool_checks": [
+      {
+        "path": "historical_comparison.Sprint 24.completion_rate",
+        "expected": 41.7,
+        "actual": 41.7,
+        "passed": true
+      },
+      {
+        "path": "historical_comparison.Sprint 25.completion_rate",
+        "expected": 54.2,
+        "actual": 54.2,
+        "passed": true
+      },
+      {
+        "path": "historical_comparison.Sprint 26.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H11",
+    "dataset": "golden",
+    "case_id": "H11",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 86.069,
+    "tool_checks": [
+      {
+        "path": "historical_comparison.Sprint 25.done_count",
+        "expected": 13,
+        "actual": 13,
+        "passed": true
+      },
+      {
+        "path": "historical_comparison.Sprint 26.done_count",
+        "expected": 16,
+        "actual": 16,
+        "passed": true
+      },
+      {
+        "path": "historical_comparison.Sprint 26.change_pp",
+        "expected": 12.5,
+        "actual": 12.5,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H12",
+    "dataset": "golden",
+    "case_id": "H12",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 79.802,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      },
+      {
+        "path": "sprint.story_points_completed",
+        "expected": 59,
+        "actual": 59,
+        "passed": true
+      },
+      {
+        "path": "sprint.blocked_count",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      },
+      {
+        "path": "sprint.overdue_count",
+        "expected": 8,
+        "actual": 8,
+        "passed": true
+      },
+      {
+        "path": "recurring_blockers.SP-118.appearances",
+        "expected": 3,
+        "actual": 3,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H13",
+    "dataset": "golden",
+    "case_id": "H13",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 73.388,
+    "tool_checks": [
+      {
+        "path": "sprint.blocked_count",
+        "expected": 3,
+        "actual": 3,
+        "passed": true
+      },
+      {
+        "path": "sprint.sprint_end",
+        "expected": "2026-06-26",
+        "actual": "2026-06-26",
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H14",
+    "dataset": "golden",
+    "case_id": "H14",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 107.4,
+    "tool_checks": [
+      {
+        "path": "blocker_durations.0.ticket_id",
+        "expected": "SP-118",
+        "actual": "SP-118",
+        "passed": true
+      },
+      {
+        "path": "blocker_durations.0.duration_days",
+        "expected": 37,
+        "actual": 37,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H15",
+    "dataset": "golden",
+    "case_id": "H15",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 83.583,
+    "tool_checks": [
+      {
+        "path": "blocker_durations.SP-122.duration_days",
+        "expected": 32,
+        "actual": 32,
+        "passed": true
+      },
+      {
+        "path": "blocker_durations.SP-122.observed_in",
+        "expected": "Sprint 26",
+        "actual": "Sprint 26",
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H16",
+    "dataset": "golden",
+    "case_id": "H16",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 83.008,
+    "tool_checks": [
+      {
+        "path": "overdue_tasks.SP-124.days_overdue",
+        "expected": 8,
+        "actual": 8,
+        "passed": true
+      },
+      {
+        "path": "overdue_tasks.SP-124.status",
+        "expected": "To Do",
+        "actual": "To Do",
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-H17",
+    "dataset": "golden",
+    "case_id": "H17",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 75.111,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "PENDING"
+    }
+  },
+  {
+    "response_id": "R-H18",
+    "dataset": "golden",
+    "case_id": "H18",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 78.731,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      },
+      {
+        "path": "historical_comparison.Sprint 25.completion_rate",
+        "expected": 54.2,
+        "actual": 54.2,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "PENDING"
+    }
+  },
+  {
+    "response_id": "R-H19",
+    "dataset": "golden",
+    "case_id": "H19",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 75.409,
+    "tool_checks": [
+      {
+        "path": "recurring_blockers.SP-118.appearances",
+        "expected": 3,
+        "actual": 3,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "PENDING"
+    }
+  },
+  {
+    "response_id": "R-H20",
+    "dataset": "golden",
+    "case_id": "H20",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 81.866,
+    "tool_checks": [
+      {
+        "path": "recurring_blockers.SP-124.appearances",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      },
+      {
+        "path": "overdue_tasks.SP-124.status",
+        "expected": "To Do",
+        "actual": "To Do",
+        "passed": true
+      },
+      {
+        "path": "blocker_durations.SP-124.observed_in",
+        "expected": "Sprint 25",
+        "actual": "Sprint 25",
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-E01",
+    "dataset": "golden",
+    "case_id": "E01",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 82.973,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-E02",
+    "dataset": "golden",
+    "case_id": "E02",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 78.352,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-E03",
+    "dataset": "golden",
+    "case_id": "E03",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 98.799,
+    "tool_checks": [
+      {
+        "path": "historical_comparison.Sprint 26.change_pp",
+        "expected": 12.5,
+        "actual": 12.5,
+        "passed": true
+      },
+      {
+        "path": "sprint.blocked_count",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-E04",
+    "dataset": "golden",
+    "case_id": "E04",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 76.146,
+    "tool_checks": [
+      {
+        "path": "overdue_tasks.$length",
+        "expected": 8,
+        "actual": 8,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-E05",
+    "dataset": "golden",
+    "case_id": "E05",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 84.88,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-E06",
+    "dataset": "golden",
+    "case_id": "E06",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 58.036,
+    "tool_checks": [],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "N/A",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-E07",
+    "dataset": "golden",
+    "case_id": "E07",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 60.533,
+    "tool_checks": [],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "N/A",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-E08",
+    "dataset": "golden",
+    "case_id": "E08",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 76.123,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      },
+      {
+        "path": "sprint.done_count",
+        "expected": 16,
+        "actual": 16,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-E09",
+    "dataset": "golden",
+    "case_id": "E09",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 78.204,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "PENDING"
+    }
+  },
+  {
+    "response_id": "R-E10",
+    "dataset": "golden",
+    "case_id": "E10",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 77.272,
+    "tool_checks": [
+      {
+        "path": "historical_comparison.Sprint 26.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "PENDING"
+    }
+  },
+  {
+    "response_id": "R-E11",
+    "dataset": "golden",
+    "case_id": "E11",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 77.546,
+    "tool_checks": [
+      {
+        "path": "recurring_blockers.SP-118.appearances",
+        "expected": 3,
+        "actual": 3,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "PENDING"
+    }
+  },
+  {
+    "response_id": "R-E12",
+    "dataset": "golden",
+    "case_id": "E12",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 73.654,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "PENDING"
+    }
+  },
+  {
+    "response_id": "R-K01",
+    "dataset": "golden",
+    "case_id": "K01",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 81.852,
+    "tool_checks": [
+      {
+        "path": "historical_comparison.Sprint 25.blocked_count",
+        "expected": 3,
+        "actual": 3,
+        "passed": true
+      },
+      {
+        "path": "historical_comparison.Sprint 26.blocked_count",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-K02",
+    "dataset": "golden",
+    "case_id": "K02",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 79.151,
+    "tool_checks": [
+      {
+        "path": "sprint.blocked_count",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-K03",
+    "dataset": "golden",
+    "case_id": "K03",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 83.751,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-K04",
+    "dataset": "golden",
+    "case_id": "K04",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 81.581,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-K05",
+    "dataset": "golden",
+    "case_id": "K05",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 81.009,
+    "tool_checks": [
+      {
+        "path": "historical_comparison.Sprint 24.completion_rate",
+        "expected": 41.7,
+        "actual": 41.7,
+        "passed": true
+      },
+      {
+        "path": "historical_comparison.Sprint 25.completion_rate",
+        "expected": 54.2,
+        "actual": 54.2,
+        "passed": true
+      },
+      {
+        "path": "historical_comparison.Sprint 26.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-K06",
+    "dataset": "golden",
+    "case_id": "K06",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 82.432,
+    "tool_checks": [
+      {
+        "path": "sprint.done_count",
+        "expected": 16,
+        "actual": 16,
+        "passed": true
+      },
+      {
+        "path": "sprint.total_tickets",
+        "expected": 24,
+        "actual": 24,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-A01",
+    "dataset": "golden",
+    "case_id": "A01",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 79.18,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      },
+      {
+        "path": "sprint.done_count",
+        "expected": 16,
+        "actual": 16,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-A02",
+    "dataset": "golden",
+    "case_id": "A02",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 81.91,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      },
+      {
+        "path": "sprint.blocked_count",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-G01",
+    "dataset": "holdout",
+    "case_id": "G01",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 328.842,
+    "tool_checks": [
+      {
+        "path": "sprint.done_count",
+        "expected": 16,
+        "actual": 16,
+        "passed": true
+      },
+      {
+        "path": "sprint.total_tickets",
+        "expected": 24,
+        "actual": 24,
+        "passed": true
+      },
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-G02",
+    "dataset": "holdout",
+    "case_id": "G02",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 113.493,
+    "tool_checks": [
+      {
+        "path": "sprint.story_points_completed",
+        "expected": 59,
+        "actual": 59,
+        "passed": true
+      },
+      {
+        "path": "sprint.story_points_scope",
+        "expected": 83,
+        "actual": 83,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-G03",
+    "dataset": "holdout",
+    "case_id": "G03",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 272.076,
+    "tool_checks": [
+      {
+        "path": "sprint.done_count",
+        "expected": 16,
+        "actual": 16,
+        "passed": true
+      },
+      {
+        "path": "sprint.blocked_count",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      },
+      {
+        "path": "sprint.overdue_count",
+        "expected": 8,
+        "actual": 8,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-G04",
+    "dataset": "holdout",
+    "case_id": "G04",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 124.473,
+    "tool_checks": [
+      {
+        "path": "historical_comparison.1.blocked_count",
+        "expected": 3,
+        "actual": 3,
+        "passed": true
+      },
+      {
+        "path": "historical_comparison.2.blocked_count",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-G05",
+    "dataset": "holdout",
+    "case_id": "G05",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 105.065,
+    "tool_checks": [
+      {
+        "path": "sprint.sprint_name",
+        "expected": "Sprint 25",
+        "actual": "Sprint 25",
+        "passed": true
+      },
+      {
+        "path": "overdue_tasks.SP-123.days_overdue",
+        "expected": 1,
+        "actual": 1,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-G06",
+    "dataset": "holdout",
+    "case_id": "G06",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 120.679,
+    "tool_checks": [
+      {
+        "path": "sprint.sprint_name",
+        "expected": "Sprint 24",
+        "actual": "Sprint 24",
+        "passed": true
+      },
+      {
+        "path": "sprint.completion_rate",
+        "expected": 41.7,
+        "actual": 41.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-G07",
+    "dataset": "holdout",
+    "case_id": "G07",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 126.544,
+    "tool_checks": [
+      {
+        "path": "overdue_tasks.SP-121.days_overdue",
+        "expected": 3,
+        "actual": 3,
+        "passed": true
+      },
+      {
+        "path": "overdue_tasks.SP-121.status",
+        "expected": "To Do",
+        "actual": "To Do",
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-G08",
+    "dataset": "holdout",
+    "case_id": "G08",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 113.731,
+    "tool_checks": [
+      {
+        "path": "sprint.story_points_scope",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "path": "sprint.story_points_completed",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-G09",
+    "dataset": "holdout",
+    "case_id": "G09",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 401.262,
+    "tool_checks": [
+      {
+        "path": "sprint.blocked_count",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      },
+      {
+        "path": "overdue_tasks.TEST-118.status",
+        "expected": "Blocked",
+        "actual": "Blocked",
+        "passed": true
+      },
+      {
+        "path": "overdue_tasks.TEST-122.status",
+        "expected": "Blocked",
+        "actual": "Blocked",
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-G10",
+    "dataset": "holdout",
+    "case_id": "G10",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 128.493,
+    "tool_checks": [
+      {
+        "path": "blocker_durations.TEST-122.duration_days",
+        "expected": 32,
+        "actual": 32,
+        "passed": true
+      },
+      {
+        "path": "blocker_durations.TEST-122.observed_in",
+        "expected": "Sprint 26",
+        "actual": "Sprint 26",
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-G11",
+    "dataset": "holdout",
+    "case_id": "G11",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 118.47,
+    "tool_checks": [
+      {
+        "path": "sprint.blocked_count",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      },
+      {
+        "path": "sprint.overdue_count",
+        "expected": 7,
+        "actual": 7,
+        "passed": true
+      },
+      {
+        "path": "overdue_tasks.$length",
+        "expected": 7,
+        "actual": 7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  },
+  {
+    "response_id": "R-G12",
+    "dataset": "holdout",
+    "case_id": "G12",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 87.308,
+    "tool_checks": [
+      {
+        "path": "sprint.story_points_completed",
+        "expected": 59,
+        "actual": 59,
+        "passed": true
+      },
+      {
+        "path": "sprint.remaining_points",
+        "expected": 24,
+        "actual": 24,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {
+      "successful_history_preserved": true,
+      "failed_turn_excluded": true,
+      "old_checkpoint_ids_preserved": true
+    },
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "PENDING"
+    }
+  },
+  {
+    "response_id": "R-G13",
+    "dataset": "holdout",
+    "case_id": "G13",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 97.175,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {
+      "different_key_recalled_zero": true
+    },
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "PENDING"
+    }
+  },
+  {
+    "response_id": "R-G14",
+    "dataset": "holdout",
+    "case_id": "G14",
+    "deterministic_route_pass": true,
+    "latency_ms_saved_not_remeasured": 119.4,
+    "tool_checks": [
+      {
+        "path": "sprint.completion_rate",
+        "expected": 66.7,
+        "actual": 66.7,
+        "passed": true
+      }
+    ],
+    "extra_memory_gates": {},
+    "bare_qualitative_statuses": {
+      "task_completion": "PENDING",
+      "answer_correctness": "PENDING",
+      "memory_context_accuracy": "N/A"
+    }
+  }
+]

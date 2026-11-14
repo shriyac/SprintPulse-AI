@@ -1,0 +1,296 @@
+{
+  "run_id": "20261110T035032Z-765dcbc8",
+  "mode": "deterministic",
+  "cases_executed": 40,
+  "full_40_case_baseline": true,
+  "metrics": {
+    "task_completion": {
+      "value": 1.0,
+      "target": 0.95,
+      "applicable_denominator": 40,
+      "scored": 40,
+      "pending": 0,
+      "not_applicable": 0,
+      "passed": true
+    },
+    "answer_correctness": {
+      "value": 1.0,
+      "target": 0.95,
+      "applicable_denominator": 38,
+      "scored": 38,
+      "pending": 0,
+      "not_applicable": 2,
+      "passed": true
+    },
+    "tool_routing_accuracy": {
+      "value": 1.0,
+      "target": 0.95,
+      "applicable_denominator": 40,
+      "scored": 40,
+      "pending": 0,
+      "not_applicable": 0,
+      "passed": true
+    },
+    "memory_context_accuracy": {
+      "value": 1.0,
+      "target": 1.0,
+      "applicable_denominator": 7,
+      "scored": 7,
+      "pending": 0,
+      "not_applicable": 33,
+      "passed": true
+    },
+    "p95_latency": {
+      "value": 102.532,
+      "target": 2000,
+      "applicable_denominator": 40,
+      "scored": 40,
+      "pending": 0,
+      "not_applicable": 0,
+      "passed": true
+    }
+  },
+  "by_category": {
+    "adversarial": {
+      "task_completion": {
+        "value": 1.0,
+        "target": 0.95,
+        "applicable_denominator": 2,
+        "scored": 2,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      },
+      "answer_correctness": {
+        "value": 1.0,
+        "target": 0.95,
+        "applicable_denominator": 2,
+        "scored": 2,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      },
+      "tool_routing_accuracy": {
+        "value": 1.0,
+        "target": 0.95,
+        "applicable_denominator": 2,
+        "scored": 2,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      },
+      "memory_context_accuracy": {
+        "value": null,
+        "target": 1.0,
+        "applicable_denominator": 0,
+        "scored": 0,
+        "pending": 0,
+        "not_applicable": 2,
+        "passed": null
+      },
+      "p95_latency": {
+        "value": 93.297,
+        "target": 2000,
+        "applicable_denominator": 2,
+        "scored": 2,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      }
+    },
+    "edge": {
+      "task_completion": {
+        "value": 1.0,
+        "target": 0.95,
+        "applicable_denominator": 12,
+        "scored": 12,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      },
+      "answer_correctness": {
+        "value": 1.0,
+        "target": 0.95,
+        "applicable_denominator": 10,
+        "scored": 10,
+        "pending": 0,
+        "not_applicable": 2,
+        "passed": true
+      },
+      "tool_routing_accuracy": {
+        "value": 1.0,
+        "target": 0.95,
+        "applicable_denominator": 12,
+        "scored": 12,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      },
+      "memory_context_accuracy": {
+        "value": 1.0,
+        "target": 1.0,
+        "applicable_denominator": 4,
+        "scored": 4,
+        "pending": 0,
+        "not_applicable": 8,
+        "passed": true
+      },
+      "p95_latency": {
+        "value": 102.532,
+        "target": 2000,
+        "applicable_denominator": 12,
+        "scored": 12,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      }
+    },
+    "happy": {
+      "task_completion": {
+        "value": 1.0,
+        "target": 0.95,
+        "applicable_denominator": 20,
+        "scored": 20,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      },
+      "answer_correctness": {
+        "value": 1.0,
+        "target": 0.95,
+        "applicable_denominator": 20,
+        "scored": 20,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      },
+      "tool_routing_accuracy": {
+        "value": 1.0,
+        "target": 0.95,
+        "applicable_denominator": 20,
+        "scored": 20,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      },
+      "memory_context_accuracy": {
+        "value": 1.0,
+        "target": 1.0,
+        "applicable_denominator": 3,
+        "scored": 3,
+        "pending": 0,
+        "not_applicable": 17,
+        "passed": true
+      },
+      "p95_latency": {
+        "value": 101.173,
+        "target": 2000,
+        "applicable_denominator": 20,
+        "scored": 20,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      }
+    },
+    "known_failure": {
+      "task_completion": {
+        "value": 1.0,
+        "target": 0.95,
+        "applicable_denominator": 6,
+        "scored": 6,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      },
+      "answer_correctness": {
+        "value": 1.0,
+        "target": 0.95,
+        "applicable_denominator": 6,
+        "scored": 6,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      },
+      "tool_routing_accuracy": {
+        "value": 1.0,
+        "target": 0.95,
+        "applicable_denominator": 6,
+        "scored": 6,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      },
+      "memory_context_accuracy": {
+        "value": null,
+        "target": 1.0,
+        "applicable_denominator": 0,
+        "scored": 0,
+        "pending": 0,
+        "not_applicable": 6,
+        "passed": null
+      },
+      "p95_latency": {
+        "value": 116.45,
+        "target": 2000,
+        "applicable_denominator": 6,
+        "scored": 6,
+        "pending": 0,
+        "not_applicable": 0,
+        "passed": true
+      }
+    }
+  },
+  "live_llm_final_responses": 0,
+  "simulated_outages_and_setup": [
+    {
+      "case_id": "H17",
+      "scenario": "project_isolation"
+    },
+    {
+      "case_id": "H18",
+      "scenario": "historical_context"
+    },
+    {
+      "case_id": "H19",
+      "scenario": "restore"
+    },
+    {
+      "case_id": "E06",
+      "scenario": "missing_sprint"
+    },
+    {
+      "case_id": "E07",
+      "scenario": "tool_failure"
+    },
+    {
+      "case_id": "E08",
+      "scenario": "llm_outage"
+    },
+    {
+      "case_id": "E09",
+      "scenario": "shared_thread"
+    },
+    {
+      "case_id": "E10",
+      "scenario": "recovery"
+    },
+    {
+      "case_id": "E11",
+      "scenario": "follow_up"
+    },
+    {
+      "case_id": "E12",
+      "scenario": "other_thread"
+    },
+    {
+      "case_id": "A02",
+      "scenario": "injected_tool_text"
+    }
+  ],
+  "limitations": [
+    "Task, final-answer and contextual meaning scores require manual review.",
+    "Only applicable, fully scored metrics receive an aggregate value.",
+    "Single-sample-per-case p95 is exploratory, not a production SLO estimate.",
+    "No hosted mem0, production data/storage, UI, restart durability or report-save journey evaluated."
+  ]
+}

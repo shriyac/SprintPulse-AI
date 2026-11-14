@@ -1,0 +1,96 @@
+{
+  "baseline": {
+    "task_completion": {
+      "value": 0.07142857142857142,
+      "target": 0.95,
+      "applicable_denominator": 14,
+      "scored": 14,
+      "pending": 0,
+      "not_applicable": 0,
+      "passed": false
+    },
+    "answer_correctness": {
+      "value": 0.07142857142857142,
+      "target": 0.95,
+      "applicable_denominator": 14,
+      "scored": 14,
+      "pending": 0,
+      "not_applicable": 0,
+      "passed": false
+    },
+    "tool_routing_accuracy": {
+      "value": 0.7142857142857143,
+      "target": 0.95,
+      "applicable_denominator": 14,
+      "scored": 14,
+      "pending": 0,
+      "not_applicable": 0,
+      "passed": false
+    },
+    "memory_context_accuracy": {
+      "value": 1.0,
+      "target": 1.0,
+      "applicable_denominator": 2,
+      "scored": 2,
+      "pending": 0,
+      "not_applicable": 12,
+      "passed": true
+    },
+    "p95_latency": {
+      "value": 233.174,
+      "target": 2000,
+      "applicable_denominator": 14,
+      "scored": 14,
+      "pending": 0,
+      "not_applicable": 0,
+      "passed": true
+    }
+  },
+  "improved": {
+    "task_completion": {
+      "value": 0.7857142857142857,
+      "target": 0.95,
+      "applicable_denominator": 14,
+      "scored": 14,
+      "pending": 0,
+      "not_applicable": 0,
+      "passed": false
+    },
+    "answer_correctness": {
+      "value": 0.7857142857142857,
+      "target": 0.95,
+      "applicable_denominator": 14,
+      "scored": 14,
+      "pending": 0,
+      "not_applicable": 0,
+      "passed": false
+    },
+    "tool_routing_accuracy": {
+      "value": 1.0,
+      "target": 0.95,
+      "applicable_denominator": 14,
+      "scored": 14,
+      "pending": 0,
+      "not_applicable": 0,
+      "passed": true
+    },
+    "memory_context_accuracy": {
+      "value": 1.0,
+      "target": 1.0,
+      "applicable_denominator": 2,
+      "scored": 2,
+      "pending": 0,
+      "not_applicable": 12,
+      "passed": true
+    },
+    "p95_latency": {
+      "value": 228.572,
+      "target": 2000,
+      "applicable_denominator": 14,
+      "scored": 14,
+      "pending": 0,
+      "not_applicable": 0,
+      "passed": true
+    }
+  }
+}

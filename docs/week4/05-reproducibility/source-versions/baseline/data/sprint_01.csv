@@ -1,0 +1,25 @@
+sprint_name,sprint_start,sprint_end,ticket_id,summary,assignee,status,priority,story_points,created_date,due_date,completed_date,is_blocker,blocker_reason,blocked_since
+Sprint 24,2026-06-01,2026-06-12,SP-101,Platform authentication refresh,Maya Chen,Done,High,5,2026-05-30,2026-06-05,2026-06-05,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-102,Audit token rotation flow,Ravi Patel,Done,High,3,2026-05-30,2026-06-06,2026-06-06,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-103,Partner API sandbox access,Elena Garcia,Done,High,5,2026-05-30,2026-06-07,2026-06-07,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-104,Add sprint export endpoint,Jordan Lee,Done,Medium,5,2026-05-30,2026-06-08,2026-06-08,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-105,Improve dashboard loading state,Maya Chen,Done,Medium,3,2026-05-30,2026-06-09,2026-06-09,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-106,Document webhook retry policy,Ravi Patel,Done,Low,2,2026-05-30,2026-06-10,2026-06-10,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-107,Add service health panel,Elena Garcia,Done,Medium,3,2026-05-30,2026-06-11,2026-06-11,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-108,Resolve vendor rate limit,Jordan Lee,Done,High,5,2026-05-30,2026-06-04,2026-06-04,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-109,Refactor event ingestion worker,Maya Chen,Done,Medium,5,2026-05-30,2026-06-05,2026-06-05,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-110,Expand integration test coverage,Ravi Patel,Done,Medium,3,2026-05-30,2026-06-06,2026-06-06,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-111,Add audit trail filters,Elena Garcia,In Progress,Medium,3,2026-05-30,2026-06-07,,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-112,Clean up notification preferences,Jordan Lee,In Progress,Low,2,2026-05-30,2026-06-08,,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-113,Create usage summary endpoint,Maya Chen,In Progress,Medium,5,2026-05-30,2026-06-09,,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-114,Repair CSV import validation,Ravi Patel,In Progress,High,3,2026-05-30,2026-06-10,,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-115,Update account settings page,Elena Garcia,In Progress,Low,2,2026-05-30,2026-06-11,,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-116,Complete analytics event mapping,Jordan Lee,In Progress,Medium,5,2026-05-30,2026-06-04,,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-117,Review accessibility labels,Maya Chen,In Progress,Low,2,2026-05-30,2026-06-05,,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-118,Configure staging data access,Ravi Patel,Blocked,High,3,2026-05-30,2026-06-06,,True,Staging access approval pending,2026-06-03
+Sprint 24,2026-06-01,2026-06-12,SP-119,Add organization-level roles,Elena Garcia,In Progress,High,5,2026-05-30,2026-06-07,,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-120,Improve search relevance,Jordan Lee,In Progress,Medium,5,2026-05-30,2026-06-08,,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-121,Add CSV download to reports,Maya Chen,To Do,Low,2,2026-05-30,2026-06-09,,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-122,Investigate intermittent timeout,Ravi Patel,Blocked,High,3,2026-05-30,2026-06-10,,True,Intermittent service timeout investigation,2026-06-08
+Sprint 24,2026-06-01,2026-06-12,SP-123,Add sprint handoff checklist,Elena Garcia,To Do,Low,2,2026-05-30,2026-06-11,,False,,
+Sprint 24,2026-06-01,2026-06-12,SP-124,Update dependency inventory,Jordan Lee,Blocked,Low,2,2026-05-30,2026-06-04,,True,Dependency inventory review pending,2026-06-10

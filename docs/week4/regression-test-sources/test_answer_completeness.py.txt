@@ -1,0 +1,192 @@
+"""Focused offline regressions; no model, hosted memory or real checkpoints."""
+from copy import deepcopy
+from pathlib import Path
+from unittest.mock import Mock
+
+import pytest
+
+import agents.graph as graph
+from agents.answer_rendering import render_answer
+from agents.semantic_memory import DisabledMemory
+from tools.sprint_data import load_sprint_data
+
+ROOT = Path(__file__).parents[1]
+
+
+@pytest.fixture
+def facts():
+    return graph._facts_for_route("compare", "Sprint 26", load_sprint_data(ROOT / "data"))
+
+
+@pytest.mark.parametrize(("prompt", "route"), [
+    ("Which risks were fixed since last sprint?", "compare"),
+    ("How have blockers improved from the previous iteration?", "compare"),
+    ("Risk count now versus the prior sprint?", "compare"),
+    ("List the unresolved impediments.", "risk"),
+    ("Show project impediments", "risk"),
+    ("Prepare the weekly summary.", "report"),
+    ("Give a weekly project status summary of risks", "report"),
+    ("Draft the weekly digest", "report"),
+    ("Show the delivery percentage.", "metrics"),
+    ("What is our delivery rate?", "metrics"),
+    ("Show the last three sprints side by side.", "compare"),
+    ("View two sprints side-by-side", "compare"),
+    ("How many items are finished?", "metrics"),
+    ("How much work is done?", "metrics"),
+    ("List finished tasks", "metrics"),
+    ("Report completion history and risks", "report"),
+    ("Compare risks and completion", "compare"),
+    ("Show overdue tickets", "risk"),
+    ("What's the current sprint health?", "question"),
+    ("Explain the SP-118 finding again", "question"),
+    ("I finished reading a book", "question"),
+    ("What was the delivery address?", "question"),
+    ("Describe the side by side layout", "question"),
+])
+def test_intents_and_existing_precedence(prompt, route):
+    assert graph.classify_route(prompt) == route
+
+
+def test_metrics_remaining_points_and_explicit_delivery_denominators(facts):
+    text = render_answer("metrics", facts, "What is the delivery percentage?")
+    assert "24 remaining" in text
+    assert "Ticket completion: 66.7% (16/24)" in text
+    assert "Story-point completion: 71.1% (59/83)" in text
+    assert "derived" in text
+    assert "2026-07-10" in text
+
+
+@pytest.mark.parametrize("scope", [0, None])
+def test_delivery_zero_or_missing_scope_is_not_invented(facts, scope):
+    facts["sprint"]["story_points_scope"] = scope
+    text = render_answer("metrics", facts, "delivery percentage")
+    assert "Story-point completion: unavailable" in text
+    assert "0.0%" not in text and "71.1%" not in text
+
+
+def test_missing_metrics_do_not_become_zero():
+    text = render_answer("metrics", {}, "delivery percentage")
+    assert "unavailable" in text and "None" not in text
+    assert "0.0%" not in text
+
+
+def test_overdue_list_is_complete_and_ticket_filter_is_specific(facts):
+    text = render_answer("risk", facts, "List overdue tasks")
+    assert all(f"SP-{i}" in text for i in range(117, 125))
+    assert "SP-116" not in text
+    assert "2026-07-10" in text
+    specific = render_answer("risk", facts, "How overdue is sp-124 and what is its status?")
+    assert "SP-124" in specific and "8 days overdue" in specific
+    assert "status To Do" in specific and "not currently blocked" in specific
+    assert "SP-118" not in specific
+
+
+def test_durations_are_observations_not_current_status(facts):
+    text = render_answer("risk", facts, "Show blocker durations across the snapshots")
+    assert all(x in text for x in ["37 days", "32 days", "2 days", "observed in Sprint 25"])
+    assert "SP-124: selected-snapshot status To Do; not currently blocked" in text
+    assert "not days elapsed as of today's date" in text
+
+
+def test_longest_is_computed_from_tool_rows_not_order(facts):
+    facts["blocker_durations"].reverse()
+    text = render_answer("risk", facts, "Which blocker has the longest observed duration?")
+    assert "SP-118" in text and "37 days" in text and "Configure staging data access" in text
+    assert "SP-122" not in text and "32 days" not in text
+
+
+def test_ticket_duration_uses_evidence_date_not_system_clock(facts):
+    text = render_answer("risk", facts, "How long has SP-122 been blocked?")
+    assert "32 days" in text and "2026-06-08" in text and "derived" in text
+    assert "SP-118" not in text
+
+
+def test_recurring_blockers_list_the_actual_snapshots(facts):
+    text = render_answer("risk", facts, "Which tasks recur as blockers across sprints?")
+    assert "SP-118: historically Blocked in Sprint 24, Sprint 25, Sprint 26 (3 snapshots)" in text
+    assert "SP-124: historically Blocked in Sprint 24, Sprint 25 (2 snapshots)" in text
+    assert "not proof of current blocked status" in text
+
+
+def test_impediment_definition_is_explicit_and_ids_current(facts):
+    text = render_answer("risk", facts, "List unresolved impediments")
+    assert "Operational definition" in text and "not all possible project impediments" in text
+    assert "SP-118" in text and "SP-122" in text and "SP-124" not in text
+    # A future-due blocked ticket would not appear in overdue evidence.
+    facts["sprint"]["blocked_count"] = 3
+    partial = render_answer("risk", facts, "List impediments")
+    assert "incomplete" in partial and "Other blocked IDs are unavailable" in partial
+
+
+def test_absent_current_ticket_evidence_does_not_imply_unblocked(facts):
+    facts["overdue_tasks"] = []
+    text = render_answer("compare", facts, "Compare SP-124 blocker history with current status")
+    assert "current status is unavailable" in text
+    assert "SP-124: selected-snapshot status To Do" not in text
+    assert "does not establish resolution" in text
+
+
+def test_comparison_scope_deltas_risks_and_no_confirmed_fix(facts):
+    text = render_answer("compare", facts, "Which risks were fixed since last sprint?")
+    assert all(x in text for x in ["41.7%", "54.2%", "66.7%", "of 24 tickets"])
+    assert "+3 (3 more completed tickets)" in text
+    assert "Sprint 25 3 → Sprint 26 2" in text
+    assert "Observed changes are not confirmed fixes" in text
+    assert "ticket-level resolution evidence is not supplied" in text
+    assert "High · Open blockers" in text
+
+
+def test_comparison_uses_selected_sprint_not_last_available(facts):
+    facts["sprint"]["sprint_name"] = "Sprint 25"
+    text = render_answer("compare", facts, "Which risks were fixed since last sprint?")
+    assert "Observed blocked-ticket count: Sprint 24 3 → Sprint 25 3" in text
+    assert "Observed blocked-ticket count: Sprint 25 3 → Sprint 26 2" not in text
+
+
+def test_ticket_history_is_distinct_from_current_status(facts):
+    text = render_answer("compare", facts, "Compare SP-124 history and status")
+    assert "historically Blocked in Sprint 24, Sprint 25" in text
+    assert "selected-snapshot status To Do; not currently blocked" in text
+    assert "does not establish resolution" in text
+    assert "SP-118" not in text
+
+
+def test_missing_historical_evidence_is_explicit():
+    text = render_answer("compare", {"sprint": {"sprint_name": "Empty"}}, "compare history")
+    assert "Historical comparison is unavailable" in text
+    assert "0.0%" not in text
+
+
+def test_draft_report_and_rendering_do_not_mutate_evidence(facts):
+    before = deepcopy(facts)
+    text = render_answer("report", facts)
+    assert "Draft only" in text and "Human approval is required" in text
+    assert all(h in text for h in ["## Delivery", "## Risk flags", "## Blocker history", "## Historical comparison"])
+    assert facts == before
+
+
+def test_outage_then_new_alias_on_same_thread_has_no_stale_state(tmp_path, monkeypatch):
+    monkeypatch.setattr(graph, "CHECKPOINT_PATH", tmp_path / "isolated.sqlite")
+    monkeypatch.setattr(graph, "configured_semantic_memory", DisabledMemory)
+    model = Mock(side_effect=RuntimeError("controlled model outage"))
+    monkeypatch.setattr(graph, "generate_grounded_text", model)
+    snapshots = load_sprint_data(ROOT / "data")
+    report = graph.invoke_sprint_graph("Prepare a weekly summary", "Sprint 26", snapshots, "isolated")
+    assert report["route"] == "report" and report["error_count"] == 1 and "Draft only" in report["report"]
+    model.side_effect = None
+    model.return_value = None, "offline"
+    latest = graph.invoke_sprint_graph("How many items are finished?", "Sprint 26", snapshots, "isolated")
+    assert latest["route"] == "metrics"
+    assert latest["report"] == "" and latest["errors"] == [] and latest["error_count"] == 0
+    assert "16 of 24 tickets complete" in latest["response"]
+
+
+def test_live_generation_result_and_task_prompt_are_not_replaced(tmp_path, monkeypatch):
+    monkeypatch.setattr(graph, "CHECKPOINT_PATH", tmp_path / "isolated.sqlite")
+    monkeypatch.setattr(graph, "configured_semantic_memory", DisabledMemory)
+    model = Mock(return_value=("Grounded model response", "mock generation"))
+    monkeypatch.setattr(graph, "generate_grounded_text", model)
+    prompt = "Which blocker has the longest observed duration?"
+    result = graph.invoke_sprint_graph(prompt, "Sprint 26", load_sprint_data(ROOT / "data"), "isolated")
+    assert result["response"] == "Grounded model response"
+    assert model.call_args.args[0] == prompt

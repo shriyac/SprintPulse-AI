@@ -1,0 +1,42 @@
+{
+  "provisional_qualitative_predictions": {
+    "PASS": 115
+  },
+  "per_criterion": {
+    "task_completion": {
+      "pass_predictions": 54,
+      "applicable": 54
+    },
+    "answer_correctness": {
+      "pass_predictions": 52,
+      "applicable": 52
+    },
+    "memory_context_accuracy": {
+      "pass_predictions": 9,
+      "applicable": 9
+    }
+  },
+  "deterministic_saved_evidence_recheck": {
+    "golden": {
+      "cases": 40,
+      "routing_passes": 40,
+      "tool_checks_passed": 82,
+      "tool_checks_total": 82,
+      "saved_p95_ms": 93.482
+    },
+    "holdout": {
+      "cases": 14,
+      "routing_passes": 14,
+      "tool_checks_passed": 31,
+      "tool_checks_total": 31,
+      "saved_p95_ms": 401.262
+    }
+  },
+  "human_reviewed_judgments": 0,
+  "agreement": null,
+  "live_model_performance": "UNVERIFIED by this packet",
+  "new_llm_judge_calls": 0,
+  "new_agent_runs": 0,
+  "paid_calls": 0,
+  "qualitative_scores_final_human_approval": false
+}

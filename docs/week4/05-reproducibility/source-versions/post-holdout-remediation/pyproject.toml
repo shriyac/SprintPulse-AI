@@ -1,0 +1,22 @@
+[project]
+name = "sprintpulse-ai"
+version = "0.1.0"
+description = "Streamlit sprint intelligence app with LangGraph orchestration."
+requires-python = ">=3.11"
+dependencies = [
+    "langchain-openai>=1.7.2",
+    "langgraph>=1.2.17",
+    "langgraph-checkpoint-sqlite>=3.1.2",
+    "pandas>=3.1.0",
+    "python-dotenv>=1.2.4",
+    "streamlit>=1.66.1",
+]
+
+[dependency-groups]
+dev = ["pytest>=9.1.1"]
+
+[project.optional-dependencies]
+semantic-memory = ["mem0ai==2.2.1", "psycopg[binary]>=3.2,<4"]
+
+[tool.uv]
+package = false

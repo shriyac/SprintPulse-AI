@@ -1,0 +1,32 @@
+{
+  "sample_judgments": 15,
+  "distinct_cases": 15,
+  "criteria_counts": {
+    "task_completion": 7,
+    "answer_correctness": 5,
+    "memory_context_accuracy": 3
+  },
+  "selection_method": "Purposive risk-stratified spot-check; not random or representative of population error rate.",
+  "selected_judgment_ids": [
+    "R-G01/task_completion",
+    "R-G06/answer_correctness",
+    "R-G10/answer_correctness",
+    "R-K01/answer_correctness",
+    "R-K04/task_completion",
+    "R-E06/task_completion",
+    "R-E07/task_completion",
+    "R-A01/task_completion",
+    "R-H01/answer_correctness",
+    "R-H20/task_completion",
+    "R-E08/task_completion",
+    "R-G12/memory_context_accuracy",
+    "R-G13/memory_context_accuracy",
+    "R-E11/memory_context_accuracy",
+    "R-G04/answer_correctness"
+  ],
+  "csv_sha256": "1f7170ab9ebc3b8947c5d3ec590491b9a11e53a19b4cd2b29477da4370218400",
+  "automated_predictions_sha256": "f236de396e2ff23bba6053c4ea9788cbc8817afcf16224746ba116a1295f8ba2",
+  "automated_fail_predictions_available": 0,
+  "pass_fail_stratum_limitation": "No final-version FAIL predictions exist. Failure-handling scenarios are included, but remain predicted PASS. No historical failures, invented failures or changed labels substituted.",
+  "reviewer_fields_blank": true
+}

@@ -1,0 +1,7 @@
+{
+  "approved": false,
+  "dataset_sha256": "c35be99dbf15d2b9fff4e4aa479c6de5c03ddccfc9fff80a5ab2b38d548cf199",
+  "reviewer_alias": "",
+  "reviewed_at": "",
+  "note": "Frozen v1 dataset review is complete, including the six approved refinements. This generic template remains false to prevent automatic baseline execution. Populate a local copy for an instructed baseline after the final validation report; live LLM costs need separate approval."
+}

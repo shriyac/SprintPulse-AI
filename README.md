@@ -6,6 +6,38 @@ SprintPulse AI helps project managers and engineering leads understand sprint pr
 
 **[Live app](https://sprint-pulse-ai.replit.app/)** · **[Source code](https://github.com/shriyac/SprintPulse-AI)**
 
+## Week 4 — Evaluate Your Agent
+
+The Week 4 submission evaluates the existing LangGraph assistant using **40 frozen golden cases** and a separate **14-case holdout**, with recorded routes, tool calls, answers, errors, latency, and explicit scoring rules.
+
+**Start here:**
+
+- [Final four-page evaluation PDF](docs/week4/01-submission/SprintPulse-AI-Week4.pdf)
+- [Chronological comparison and measured improvements](docs/week4/02-evaluation-evidence/chronological-comparison.md)
+- [Final author-review report](docs/week4/03-author-review/FINAL-AUTHOR-REVIEW.md)
+- [Frozen golden dataset](evaluation/golden/v1.json), [holdout dataset](evaluation/holdout/v1.json), and [scoring rubric](evaluation/RUBRIC.md)
+- [Reproducibility instructions](docs/week4/05-reproducibility/REPRODUCE.md) and [public-export scope](docs/week4/PUBLIC-EXPORT.md)
+
+### Saved evaluation results
+
+| Evaluation stage | Task completion | Answer correctness | Tool routing | Memory/context | p95 latency |
+| --- | --- | --- | --- | --- | --- |
+| Golden baseline | 24/40 | 20/38 | 34/40 | 7/7 | 102.315 ms |
+| Golden initial improved | 40/40 | 38/38 | 40/40 | 7/7 | 102.532 ms |
+| Original unseen holdout, improved agent | **11/14** | **11/14** | 14/14 | 2/2 | 228.572 ms |
+| Post-holdout remediation, golden replay | 40/40 | 38/38 | 40/40 | 7/7 | 93.482 ms |
+| Post-holdout remediation, holdout replay | **14/14** | **14/14** | 14/14 | 2/2 | 401.262 ms |
+
+These are **saved deterministic graph evaluations with stubbed/fallback generation**, not live-model benchmarks. Full-dataset qualitative grades remain provisional agent-assisted assessments. N/A judgments are excluded from their metric denominators; latency is exploratory, not a statistically established performance comparison.
+
+The original unseen result remains **11/14**. The later **14/14** follows fixes for unfinished-ticket counts, missing predecessor snapshots, and exact ticket-ID scope; it is a remediation replay, **not a new unseen evaluation**.
+
+### Human spot-check
+
+An author-reviewed sample contains **15/15 PASS judgments and 100% agreement** with provisional automated predictions: **7 task-completion, 5 correctness, and 3 memory/context judgments**. This is **author review, not independent third-party review**. The purposive, all-PASS sample does not establish full-dataset accuracy; the other 100 of 115 applicable qualitative judgments were not human-reviewed by this sample.
+
+**Application boundary:** this branch adds evaluation evidence and documentation without changing the existing Week 3 runtime or deployment configuration. The reviewed improved/remediation implementations and regression-test sources are archived for isolated reproduction; the unchanged runtime is not claimed to produce their scores. No live-model or production validation is implied.
+
 ## What it does
 
 - **Sprint Dashboard:** Completion metrics, overdue work, blockers, and delivery risk flags.
@@ -99,6 +131,8 @@ The app includes automated tests for sprint analysis, routing, memory isolation,
 - `data/` — Synthetic data and ledger schema
 - `tests/` — Automated validation
 - `docs/` — Detailed technical and production-readiness notes
+- `evaluation/` — Week 4 frozen datasets, scoring rubric, harness, and evaluation reports
+- `docs/week4/` — Final submission, sanitized saved results, author review, and versioned reproduction sources
 
 ---
 
