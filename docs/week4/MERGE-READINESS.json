@@ -1,0 +1,50 @@
+{
+  "base_main": "499b5c605e1b6d1d1680982aaab360d62737f15b",
+  "reviewed_existing_feature_commit": "779460e2fa586a9d7fe39a7e394f74c1952de995",
+  "status": "READY TO MERGE AS AN EVALUATION-ONLY BRANCH",
+  "required_components": {
+    "harness_and_evaluators": "PASS: evaluation/*.py",
+    "frozen_golden_and_rubric": "PASS: 40 cases; original checksums and rubric unchanged",
+    "baseline_and_improved_scored_results": "PASS: 40 raw/scored records each",
+    "original_holdout": "PASS: 28 paired raw/scored records; 14 distinct cases per version",
+    "post_holdout_remediation": "PASS: 40 golden and 14 holdout raw/scored records",
+    "regression_tests": "PASS: three verbatim .py files now packaged in a source ZIP; original .py.txt copies retained",
+    "sanitized_reports": "PASS: four-page PDF, author-reviewed summary and sanitized source evidence"
+  },
+  "record_counts": {
+    "golden-original-baseline": {
+      "raw_records": 40,
+      "scored_records": 40,
+      "distinct_cases": 40
+    },
+    "golden-initial-improved": {
+      "raw_records": 40,
+      "scored_records": 40,
+      "distinct_cases": 40
+    },
+    "original-paired-holdout": {
+      "raw_records": 28,
+      "scored_records": 28,
+      "distinct_cases": 14
+    },
+    "remediation-golden": {
+      "raw_records": 40,
+      "scored_records": 40,
+      "distinct_cases": 40
+    },
+    "remediation-holdout": {
+      "raw_records": 14,
+      "scored_records": 14,
+      "distinct_cases": 14
+    }
+  },
+  "four_page_pdf": true,
+  "author_sample": "15/15 PASS, 100% agreement; not independent third-party review",
+  "original_public_artifacts_preserved": 164,
+  "public_files_scanned_before_new_checklist": 165,
+  "reachable_history_blobs_scanned": 244,
+  "sensitive_content_candidates": 0,
+  "application_and_deployment_changes": 0,
+  "new_test_or_evaluation_runs": 0,
+  "readiness_boundary": "Evaluation artifacts, source archives and regression source package are complete. Merging does not install the archived improved/remediation runtime or certify live-model/production behavior."
+}
